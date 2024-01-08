@@ -3,6 +3,7 @@ import 'dart:html';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:konsultanku/widget/appBar.dart';
 
 class Post {
   final String username;
@@ -36,12 +37,15 @@ class PostWidget extends StatefulWidget {
 class _PostWidgetState extends State<PostWidget> {
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Scaffold(
+      appBar: appBarWidget(),
+      body: Card(
         shape: RoundedRectangleBorder(
           borderRadius:
               BorderRadius.circular(10.0), // Adjust the radius as needed
           side: BorderSide(
-            color: Color.fromARGB(255, 203, 203, 203), // Set the color of the border
+            color: Color.fromARGB(
+                255, 203, 203, 203), // Set the color of the border
             width: 1.0, // Set the width of the border
           ),
         ),
@@ -155,7 +159,8 @@ class _PostWidgetState extends State<PostWidget> {
                     borderRadius: BorderRadius.circular(
                         10.0), // Adjust the radius as needed
                     side: BorderSide(
-                      color: Color.fromARGB(255, 203, 203, 203), // Set the color of the border
+                      color: Color.fromARGB(
+                          255, 203, 203, 203), // Set the color of the border
                       width: 1.0, // Set the width of the border
                     ),
                   ),
@@ -169,9 +174,12 @@ class _PostWidgetState extends State<PostWidget> {
                     subtitle: Text("this is comment after sent"),
                   ),
                 ),
-              )
+              ),
+              SizedBox(height: 16,)
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

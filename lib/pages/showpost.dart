@@ -15,7 +15,22 @@ class _ShowPostState extends State<ShowPost> {
       imageUrl: 'assets/images/image1.jpg',
     ),
     Post(
-      username: 'User2',
+      username: 'User3',
+      content: 'Post content 2',
+      imageUrl: 'assets/images/image2.jpg',
+    ),
+    Post(
+      username: 'User4',
+      content: 'Post content 2',
+      imageUrl: 'assets/images/image2.jpg',
+    ),
+    Post(
+      username: 'User5',
+      content: 'Post content 2',
+      imageUrl: 'assets/images/image2.jpg',
+    ),
+    Post(
+      username: 'User6',
       content: 'Post content 2',
       imageUrl: 'assets/images/image2.jpg',
     ),
