@@ -37,6 +37,15 @@ class _PostWidgetState extends State<PostWidget> {
   @override
   Widget build(BuildContext context) {
     return Card(
+        shape: RoundedRectangleBorder(
+          borderRadius:
+              BorderRadius.circular(10.0), // Adjust the radius as needed
+          side: BorderSide(
+            color: Color.fromARGB(255, 203, 203, 203), // Set the color of the border
+            width: 1.0, // Set the width of the border
+          ),
+        ),
+        color: Colors.white,
         margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         child: SingleChildScrollView(
           child: Column(
@@ -64,7 +73,7 @@ class _PostWidgetState extends State<PostWidget> {
                 title: Text(widget.post.username),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(16.0),
                 child: Text(widget.post.content),
               ),
               if (widget.post.imageUrl.isNotEmpty)
@@ -72,50 +81,46 @@ class _PostWidgetState extends State<PostWidget> {
                 //   // widget.post.imageUrl,
                 //   // fit: BoxFit.fill,
                 // ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  IconButton(
-                    icon: Icon(
-                      widget.post.isLiked
-                          ? Icons.favorite
-                          : Icons.favorite_border,
-                      color: widget.post.isLiked ? Colors.red : null,
-                    ),
-                    onPressed: () {
-                      setState(() {
-                        if (widget.post.isLiked) {
-                          widget.post.likeCount--;
-                        } else {
-                          widget.post.likeCount++;
-                        }
-                        widget.post.isLiked = !widget.post.isLiked;
-                      });
-                    },
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.comment),
-                    onPressed: () {
-                      setState(() {
-                        widget.post.isCommenting = !widget.post.isCommenting;
-                      });
-                    },
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text('${widget.post.likeCount} likes'),
-                    Text('${widget.post.commentCount} comments'),
+                    IconButton(
+                      onPressed: () {
+                        setState(() {
+                          widget.post.isLiked = !widget.post.isLiked;
+                          if (widget.post.isLiked) {
+                            widget.post.likeCount++;
+                          } else {
+                            widget.post.likeCount--;
+                          }
+                        });
+                      },
+                      icon: Icon(
+                        widget.post.isLiked
+                            ? Icons.favorite
+                            : Icons.favorite_border,
+                        color: widget.post.isLiked ? Colors.red : null,
+                      ),
+                    ),
+                    Text(
+                        '${widget.post.likeCount} Suka'), // Text widget for 'Like'
+                    IconButton(
+                      onPressed: () {
+                        setState(() {
+                          widget.post.isCommenting = !widget.post.isCommenting;
+                        });
+                      },
+                      icon: Icon(Icons.comment),
+                    ),
+                    Text(
+                        '${widget.post.commentCount} Komentar'), // Text widget for 'Comment'
                   ],
                 ),
-              ),
               SizedBox(
                 height: 16,
               ),
+              Divider(color: Colors.grey),
               if (widget.post.isCommenting)
                 Padding(
                   padding: const EdgeInsets.symmetric(
@@ -142,6 +147,28 @@ class _PostWidgetState extends State<PostWidget> {
                 ),
               SizedBox(
                 height: 16,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(),
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                        10.0), // Adjust the radius as needed
+                    side: BorderSide(
+                      color: Color.fromARGB(255, 203, 203, 203), // Set the color of the border
+                      width: 1.0, // Set the width of the border
+                    ),
+                  ),
+                  color: const Color.fromARGB(224, 255, 255, 255),
+                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.pink,
+                    ),
+                    title: Text(widget.post.username),
+                    subtitle: Text("this is comment after sent"),
+                  ),
+                ),
               )
             ],
           ),
