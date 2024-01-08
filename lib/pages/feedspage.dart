@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:konsultanku/widget/appBar.dart';
+import 'package:konsultanku/widget/commentList.dart';
 
 class Post {
   final String username;
@@ -25,6 +26,16 @@ class Post {
   });
 }
 
+class CommentPost {
+  final String username;
+  final String comment;
+
+  CommentPost({
+    required this.username,
+    required this.comment,
+  });
+}
+
 class PostWidget extends StatefulWidget {
   final Post post;
 
@@ -35,6 +46,14 @@ class PostWidget extends StatefulWidget {
 }
 
 class _PostWidgetState extends State<PostWidget> {
+  final List<CommentPost> comments = [
+    CommentPost(
+        username: "username 1",
+        comment: "Another exception was thrown: Assertion failed:"),
+    CommentPost(
+        username: "username 2",
+        comment: "Another exception was thrown: Assertion failed:"),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -153,29 +172,22 @@ class _PostWidgetState extends State<PostWidget> {
                 height: 16,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(),
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        10.0), // Adjust the radius as needed
-                    side: BorderSide(
-                      color: Color.fromARGB(
-                          255, 203, 203, 203), // Set the color of the border
-                      width: 1.0, // Set the width of the border
-                    ),
-                  ),
-                  color: const Color.fromARGB(224, 255, 255, 255),
-                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      backgroundColor: Colors.pink,
-                    ),
-                    title: Text(widget.post.username),
-                    subtitle: Text("this is comment after sent"),
-                  ),
+                padding: EdgeInsets.symmetric(horizontal: 1.0),
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: comments.length,
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                        onTap: () {
+
+                        },
+                        child: CommentListWidget());
+                  },
                 ),
+              
               ),
-              SizedBox(height: 16,)
+              SizedBox(height: 16,),
             ],
           ),
         ),
