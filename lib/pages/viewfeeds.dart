@@ -50,6 +50,20 @@ class _FeedsWidgetState extends State<FeedsWidget> {
               ),
             ),
             title: Text(widget.post.username),
+            trailing: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 45, 52, 146),
+                borderRadius: BorderRadius.circular(15.0),
+              ),
+              child: Text(
+                'management',
+                style: TextStyle(
+                  fontSize: 10,
+                  color: Colors.white, // Warna teksnya
+                ),
+              ),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),

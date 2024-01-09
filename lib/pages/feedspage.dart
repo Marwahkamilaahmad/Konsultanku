@@ -93,6 +93,21 @@ class _PostWidgetState extends State<PostWidget> {
                     backgroundColor: Colors.purple[200],
                   ),
                 ),
+                trailing: Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 45, 52, 146),
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  child: Text(
+                    'management',
+                    style: TextStyle(
+                      fontSize: 10,
+                      color: Colors.white, // Warna teksnya
+                    ),
+                  ),
+                ),
                 title: Text(widget.post.username),
               ),
               Padding(
@@ -179,15 +194,13 @@ class _PostWidgetState extends State<PostWidget> {
                   itemCount: comments.length,
                   itemBuilder: (context, index) {
                     return GestureDetector(
-                        onTap: () {
-
-                        },
-                        child: CommentListWidget());
+                        onTap: () {}, child: CommentListWidget());
                   },
                 ),
-              
               ),
-              SizedBox(height: 16,),
+              SizedBox(
+                height: 16,
+              ),
             ],
           ),
         ),
