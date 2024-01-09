@@ -83,6 +83,7 @@ class _ShowPostState extends State<ShowPost> {
           ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(onPressed: (){}, child: Icon(Icons.edit_outlined),),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:konsultanku/main.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // class BottomNavBarWidget extends StatefulWidget {
 //   @override
 //   _BottomNavBarWidgetState createState() => _BottomNavBarWidgetState();
@@ -55,7 +56,7 @@ class BottomNavBarWidget extends StatelessWidget {
       type: BottomNavigationBarType.fixed,
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.phone_in_talk_sharp),
+          icon: Icon(FontAwesomeIcons.comments),
           label: 'Chat',
         ),
         BottomNavigationBarItem(
@@ -68,7 +69,7 @@ class BottomNavBarWidget extends StatelessWidget {
         ),
       ],
       currentIndex: currentIndex,
-      selectedItemColor: Color(0xFFAA292E),
+      selectedItemColor: Color.fromARGB(255, 73, 41, 170),
       onTap: onItemTapped,
     );
   }
