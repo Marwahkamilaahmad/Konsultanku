@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:konsultanku/pages/feedspage.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:konsultanku/pages/feedspage.dart';
 
 class FeedsWidget extends StatefulWidget {
   final Post post;
@@ -12,6 +13,8 @@ class FeedsWidget extends StatefulWidget {
 }
 
 class _FeedsWidgetState extends State<FeedsWidget> {
+  int commentCount = comments.length;
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -33,38 +36,108 @@ class _FeedsWidgetState extends State<FeedsWidget> {
           SizedBox(
             height: 10,
           ),
-          ListTile(
-            leading: IconButton(
-              onPressed: () {
-                Fluttertoast.showToast(
-                  msg: "go to profile",
-                  toastLength: Toast.LENGTH_SHORT,
-                  gravity: ToastGravity.CENTER,
-                  backgroundColor: Colors.purple,
-                  textColor: Colors.white,
-                );
-              },
-              icon: CircleAvatar(
-                // backgroundImage: AssetImage('assets/user_profile_image.png'),
-                backgroundColor: Colors.purple[200],
+          if (widget.post.tag == 'branding')
+            ListTile(
+              leading: IconButton(
+                onPressed: () {
+                  Fluttertoast.showToast(
+                    msg: "go to profile",
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.CENTER,
+                    backgroundColor: Colors.purple,
+                    textColor: Colors.white,
+                  );
+                },
+                icon: CircleAvatar(
+                  // backgroundImage: AssetImage('assets/user_profile_image.png'),
+                  backgroundColor: Colors.purple[200],
+                ),
               ),
-            ),
-            title: Text(widget.post.username),
-            trailing: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 45, 52, 146),
-                borderRadius: BorderRadius.circular(15.0),
-              ),
-              child: Text(
-                'management',
-                style: TextStyle(
-                  fontSize: 10,
-                  color: Colors.white, // Warna teksnya
+              title: Text(widget.post.username),
+              trailing: Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 45, 52, 146),
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                child: Text(
+                  widget.post.tag,
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Colors.white, // Warna teksnya
+                  ),
                 ),
               ),
             ),
-          ),
+          if (widget.post.tag == 'management')
+            ListTile(
+              leading: IconButton(
+                onPressed: () {
+                  Fluttertoast.showToast(
+                    msg: "go to profile",
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.CENTER,
+                    backgroundColor: Colors.purple,
+                    textColor: Colors.white,
+                  );
+                },
+                icon: CircleAvatar(
+                  // backgroundImage: AssetImage('assets/user_profile_image.png'),
+                  backgroundColor: Colors.purple[200],
+                ),
+              ),
+              title: Text(widget.post.username),
+              trailing: Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 146, 45, 45),
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                child: Text(
+                  widget.post.tag,
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Colors.white, // Warna teksnya
+                  ),
+                ),
+              ),
+            ),
+          if (widget.post.tag == 'pemasaran')
+            ListTile(
+              leading: IconButton(
+                onPressed: () {
+                  Fluttertoast.showToast(
+                    msg: "go to profile",
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.CENTER,
+                    backgroundColor: Colors.purple,
+                    textColor: Colors.white,
+                  );
+                },
+                icon: CircleAvatar(
+                  // backgroundImage: AssetImage('assets/user_profile_image.png'),
+                  backgroundColor: Colors.purple[200],
+                ),
+              ),
+              title: Text(widget.post.username),
+              trailing: Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 146, 99, 45),
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                child: Text(
+                  widget.post.tag,
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Colors.white, // Warna teksnya
+                  ),
+                ),
+              ),
+            ),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(widget.post.content),
@@ -104,8 +177,7 @@ class _FeedsWidgetState extends State<FeedsWidget> {
                   },
                   icon: Icon(Icons.comment),
                 ),
-                Text(
-                    '${widget.post.commentCount} Komentar'), // Text widget for 'Comment'
+                Text('${commentCount} Komentar'), // Text widget for 'Comment'
               ],
             ),
           SizedBox(

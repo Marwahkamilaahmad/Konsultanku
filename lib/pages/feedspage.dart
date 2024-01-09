@@ -10,6 +10,7 @@ class Post {
   final String username;
   final String content;
   final String imageUrl;
+  final String tag;
   bool isLiked;
   int likeCount;
   bool isCommenting;
@@ -18,6 +19,7 @@ class Post {
   Post({
     required this.username,
     required this.content,
+    required this.tag,
     required this.imageUrl,
     this.isLiked = false,
     this.likeCount = 0,
@@ -36,6 +38,15 @@ class CommentPost {
   });
 }
 
+  final List<CommentPost> comments = [
+    CommentPost(
+        username: "username 1",
+        comment: "Another exception was thrown: Assertion failed:"),
+    CommentPost(
+        username: "username 2",
+        comment: "Another exception was thrown: Assertion failed:"),
+  ];
+
 class PostWidget extends StatefulWidget {
   final Post post;
 
@@ -45,15 +56,21 @@ class PostWidget extends StatefulWidget {
   _PostWidgetState createState() => _PostWidgetState();
 }
 
+// int commentCount = 0;
+
 class _PostWidgetState extends State<PostWidget> {
-  final List<CommentPost> comments = [
-    CommentPost(
-        username: "username 1",
-        comment: "Another exception was thrown: Assertion failed:"),
-    CommentPost(
-        username: "username 2",
-        comment: "Another exception was thrown: Assertion failed:"),
-  ];
+
+   int commentCount = comments.length;
+  
+
+  // final List<CommentPost> comments = [
+  //   CommentPost(
+  //       username: "username 1",
+  //       comment: "Another exception was thrown: Assertion failed:"),
+  //   CommentPost(
+  //       username: "username 2",
+  //       comment: "Another exception was thrown: Assertion failed:"),
+  // ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,39 +94,108 @@ class _PostWidgetState extends State<PostWidget> {
               SizedBox(
                 height: 10,
               ),
-              ListTile(
-                leading: IconButton(
-                  onPressed: () {
-                    Fluttertoast.showToast(
-                      msg: "go to profile",
-                      toastLength: Toast.LENGTH_SHORT,
-                      gravity: ToastGravity.CENTER,
-                      backgroundColor: Colors.purple,
-                      textColor: Colors.white,
-                    );
-                  },
-                  icon: CircleAvatar(
-                    // backgroundImage: AssetImage('assets/user_profile_image.png'),
-                    backgroundColor: Colors.purple[200],
+              if (widget.post.tag == 'branding')
+                ListTile(
+                  leading: IconButton(
+                    onPressed: () {
+                      Fluttertoast.showToast(
+                        msg: "go to profile",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.CENTER,
+                        backgroundColor: Colors.purple,
+                        textColor: Colors.white,
+                      );
+                    },
+                    icon: CircleAvatar(
+                      // backgroundImage: AssetImage('assets/user_profile_image.png'),
+                      backgroundColor: Colors.purple[200],
+                    ),
                   ),
-                ),
-                trailing: Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 45, 52, 146),
-                    borderRadius: BorderRadius.circular(15.0),
-                  ),
-                  child: Text(
-                    'management',
-                    style: TextStyle(
-                      fontSize: 10,
-                      color: Colors.white, // Warna teksnya
+                  title: Text(widget.post.username),
+                  trailing: Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 45, 52, 146),
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    child: Text(
+                      widget.post.tag,
+                      style: TextStyle(
+                        fontSize: 10,
+                        color: Colors.white, // Warna teksnya
+                      ),
                     ),
                   ),
                 ),
-                title: Text(widget.post.username),
-              ),
+              if (widget.post.tag == 'management')
+                ListTile(
+                  leading: IconButton(
+                    onPressed: () {
+                      Fluttertoast.showToast(
+                        msg: "go to profile",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.CENTER,
+                        backgroundColor: Colors.purple,
+                        textColor: Colors.white,
+                      );
+                    },
+                    icon: CircleAvatar(
+                      // backgroundImage: AssetImage('assets/user_profile_image.png'),
+                      backgroundColor: Colors.purple[200],
+                    ),
+                  ),
+                  title: Text(widget.post.username),
+                  trailing: Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 146, 45, 45),
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    child: Text(
+                      widget.post.tag,
+                      style: TextStyle(
+                        fontSize: 10,
+                        color: Colors.white, // Warna teksnya
+                      ),
+                    ),
+                  ),
+                ),
+              if (widget.post.tag == 'pemasaran')
+                ListTile(
+                  leading: IconButton(
+                    onPressed: () {
+                      Fluttertoast.showToast(
+                        msg: "go to profile",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.CENTER,
+                        backgroundColor: Colors.purple,
+                        textColor: Colors.white,
+                      );
+                    },
+                    icon: CircleAvatar(
+                      // backgroundImage: AssetImage('assets/user_profile_image.png'),
+                      backgroundColor: Colors.purple[200],
+                    ),
+                  ),
+                  title: Text(widget.post.username),
+                  trailing: Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 146, 99, 45),
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    child: Text(
+                      widget.post.tag,
+                      style: TextStyle(
+                        fontSize: 10,
+                        color: Colors.white, // Warna teksnya
+                      ),
+                    ),
+                  ),
+                ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(widget.post.content),
@@ -152,7 +238,7 @@ class _PostWidgetState extends State<PostWidget> {
                       icon: Icon(Icons.comment),
                     ),
                     Text(
-                        '${widget.post.commentCount} Komentar'), // Text widget for 'Comment'
+                        '${commentCount} Komentar'), // Text widget for 'Comment'
                   ],
                 ),
               SizedBox(
@@ -174,7 +260,12 @@ class _PostWidgetState extends State<PostWidget> {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.0),
                   child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        initState();
+                        setState(() {
+                          // widget.post.commentCount += 1;
+                        });
+                      },
                       child: Text('sent'),
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(

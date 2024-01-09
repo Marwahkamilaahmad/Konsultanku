@@ -13,26 +13,31 @@ class _ShowPostState extends State<ShowPost> {
       username: 'User1',
       content: 'Post content 1',
       imageUrl: 'assets/images/image1.jpg',
+      tag : 'management',
     ),
     Post(
       username: 'User3',
       content: 'Post content 2',
       imageUrl: 'assets/images/image2.jpg',
+      tag : 'branding',
     ),
     Post(
       username: 'User4',
       content: 'Post content 2',
       imageUrl: 'assets/images/image2.jpg',
+      tag : 'pemasaran',
     ),
     Post(
       username: 'User5',
       content: 'Post content 2',
       imageUrl: 'assets/images/image2.jpg',
+      tag : 'branding',
     ),
     Post(
       username: 'User6',
       content: 'Post content 2',
       imageUrl: 'assets/images/image2.jpg',
+      tag : 'management',
     ),
     // Add more posts as needed
   ];
