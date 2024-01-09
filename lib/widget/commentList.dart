@@ -1,6 +1,23 @@
-import 'package:flutter/material.dart';
+import 'dart:html';
+import 'dart:js_interop_unsafe';
 
-class CommentListWidget extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:konsultanku/pages/feedspage.dart';
+
+class CommentListWidget extends StatefulWidget {
+  final Post post;
+  final CommentPost user;
+
+  const CommentListWidget({Key? key, required this.post, required this.user})
+      : super(key: key);
+
+  @override
+  _CommentListState createState() => _CommentListState();
+}
+
+class _CommentListState extends State<CommentListWidget> {
+  bool isCollaborating = false;
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -41,7 +58,11 @@ class CommentListWidget extends StatelessWidget {
                         TextButton(
                           onPressed: () {
                             // Lakukan aksi jika user memilih "Yes"
-                            Navigator.of(context).pop(true); // Tutup dialog
+                            Navigator.of(context).pop(true);
+                            setState(() {
+                              isCollaborating = true;
+                              widget.user.solved = true;
+                            });
                           },
                           child: Text('Yes'),
                         ),
@@ -50,7 +71,7 @@ class CommentListWidget extends StatelessWidget {
                   },
                 );
               },
-              child: Text("collab"))),
+              child: Text(widget.user.solved ? "on collab" : "collab" ))),
     );
   }
 }

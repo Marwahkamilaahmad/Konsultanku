@@ -1,4 +1,7 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
+import 'package:konsultanku/pages/createPost.dart';
 import 'package:konsultanku/pages/feedspage.dart';
 import 'package:konsultanku/pages/viewfeeds.dart';
 
@@ -13,31 +16,32 @@ class _ShowPostState extends State<ShowPost> {
       username: 'User1',
       content: 'Post content 1',
       imageUrl: 'assets/images/image1.jpg',
-      tag : 'management',
+      tag: 'management',
+      solved: true,
     ),
     Post(
       username: 'User3',
       content: 'Post content 2',
       imageUrl: 'assets/images/image2.jpg',
-      tag : 'branding',
+      tag: 'branding',
     ),
     Post(
       username: 'User4',
       content: 'Post content 2',
       imageUrl: 'assets/images/image2.jpg',
-      tag : 'pemasaran',
+      tag: 'pemasaran',
     ),
     Post(
       username: 'User5',
       content: 'Post content 2',
       imageUrl: 'assets/images/image2.jpg',
-      tag : 'branding',
+      tag: 'branding',
     ),
     Post(
       username: 'User6',
       content: 'Post content 2',
       imageUrl: 'assets/images/image2.jpg',
-      tag : 'management',
+      tag: 'management',
     ),
     // Add more posts as needed
   ];
@@ -49,7 +53,8 @@ class _ShowPostState extends State<ShowPost> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 16),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 16),
               child: SizedBox(
                 height: 35,
                 child: TextField(
@@ -70,7 +75,6 @@ class _ShowPostState extends State<ShowPost> {
                   ),
                 ),
               ),
-              
             ),
             Expanded(
               child: Stack(
@@ -119,7 +123,12 @@ class _ShowPostState extends State<ShowPost> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CreatePost()),
+          );
+        },
         child: Icon(Icons.edit_outlined),
       ),
     );

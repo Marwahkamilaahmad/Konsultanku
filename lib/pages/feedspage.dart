@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:konsultanku/widget/appBar.dart';
 import 'package:konsultanku/widget/commentList.dart';
+import 'package:konsultanku/pages/showpost.dart';
 
 class Post {
   final String username;
@@ -15,6 +16,7 @@ class Post {
   int likeCount;
   bool isCommenting;
   int commentCount;
+  bool solved;
 
   Post({
     required this.username,
@@ -25,32 +27,39 @@ class Post {
     this.likeCount = 0,
     this.commentCount = 0,
     this.isCommenting = false,
+    this.solved = false,
   });
 }
 
 class CommentPost {
   final String username;
   final String comment;
+  bool solved;
 
   CommentPost({
     required this.username,
     required this.comment,
+    this.solved = false,
   });
 }
 
-  final List<CommentPost> comments = [
-    CommentPost(
-        username: "username 1",
-        comment: "Another exception was thrown: Assertion failed:"),
-    CommentPost(
-        username: "username 2",
-        comment: "Another exception was thrown: Assertion failed:"),
-  ];
+final List<CommentPost> comments = [
+  CommentPost(
+      username: "username 1",
+      comment: "Another exception was thrown: Assertion failed:",
+      solved: false),
+  CommentPost(
+      username: "username 2",
+      comment: "Another exception was thrown: Assertion failed:",
+      solved: false),
+];
 
 class PostWidget extends StatefulWidget {
   final Post post;
+  final CommentPost? comment;
 
-  const PostWidget({Key? key, required this.post}) : super(key: key);
+
+  const PostWidget({Key? key, required this.post, this.comment}) : super(key: key);
 
   @override
   _PostWidgetState createState() => _PostWidgetState();
@@ -59,20 +68,12 @@ class PostWidget extends StatefulWidget {
 // int commentCount = 0;
 
 class _PostWidgetState extends State<PostWidget> {
+  int commentCount = comments.length;
 
-   int commentCount = comments.length;
-  
 
-  // final List<CommentPost> comments = [
-  //   CommentPost(
-  //       username: "username 1",
-  //       comment: "Another exception was thrown: Assertion failed:"),
-  //   CommentPost(
-  //       username: "username 2",
-  //       comment: "Another exception was thrown: Assertion failed:"),
-  // ];
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: appBarWidget(),
       body: Card(
@@ -128,7 +129,7 @@ class _PostWidgetState extends State<PostWidget> {
                     ),
                   ),
                 ),
-              if (widget.post.tag == 'management')
+              if (widget.post.tag == 'management' )
                 ListTile(
                   leading: IconButton(
                     onPressed: () {
@@ -196,6 +197,40 @@ class _PostWidgetState extends State<PostWidget> {
                     ),
                   ),
                 ),
+              if (widget.comment != null && widget.comment!.solved == false)
+                ListTile(
+                  leading: IconButton(
+                    onPressed: () {
+                      Fluttertoast.showToast(
+                        msg: "go to profile",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.CENTER,
+                        backgroundColor: Colors.purple,
+                        textColor: Colors.white,
+                      );
+                    },
+                    icon: CircleAvatar(
+                      // backgroundImage: AssetImage('assets/user_profile_image.png'),
+                      backgroundColor: Colors.purple[200],
+                    ),
+                  ),
+                  title: Text(widget.post.username),
+                  trailing: Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 66, 66, 66),
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    child: Text(
+                      "on progress task",
+                      style: TextStyle(
+                        fontSize: 10,
+                        color: Colors.white, // Warna teksnya
+                      ),
+                    ),
+                  ),
+                ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(widget.post.content),
@@ -229,14 +264,23 @@ class _PostWidgetState extends State<PostWidget> {
                     ),
                     Text(
                         '${widget.post.likeCount} Suka'), // Text widget for 'Like'
-                    IconButton(
-                      onPressed: () {
-                        setState(() {
-                          widget.post.isCommenting = !widget.post.isCommenting;
-                        });
-                      },
-                      icon: Icon(Icons.comment),
-                    ),
+                    if (widget.post.solved == false)
+                      IconButton(
+                        onPressed: () {
+                          setState(() {
+                            widget.post.isCommenting =
+                                !widget.post.isCommenting;
+                          });
+                        },
+                        icon: Icon(Icons.comment),
+                      ),
+                    if (widget.post.solved == true)
+                      IconButton(
+                        onPressed: () {
+                          setState(() {});
+                        },
+                        icon: Icon(Icons.comment),
+                      ),
                     Text(
                         '${commentCount} Komentar'), // Text widget for 'Comment'
                   ],
@@ -285,7 +329,11 @@ class _PostWidgetState extends State<PostWidget> {
                   itemCount: comments.length,
                   itemBuilder: (context, index) {
                     return GestureDetector(
-                        onTap: () {}, child: CommentListWidget());
+                        onTap: () {},
+                        child: CommentListWidget(
+                          user: comments[index],
+                          post: widget.post,
+                        ));
                   },
                 ),
               ),
