@@ -19,10 +19,10 @@ class Post {
   bool solved;
 
   Post({
-    required this.username,
-    required this.content,
-    required this.tag,
-    required this.imageUrl,
+    this.username = "",
+    this.content = "",
+    this.tag = "",
+    this.imageUrl = "",
     this.isLiked = false,
     this.likeCount = 0,
     this.commentCount = 0,

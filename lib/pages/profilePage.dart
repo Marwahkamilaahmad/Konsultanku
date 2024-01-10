@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:konsultanku/pages/feedspage.dart';
 import 'package:konsultanku/pages/identityPage.dart';
 import 'package:konsultanku/pages/userActivityPage.dart';
 import 'package:konsultanku/pages/userPostPage.dart';
 import 'package:konsultanku/widget/userProfile.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -46,7 +48,8 @@ class _ProfilePageState extends State<ProfilePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.pin_rounded),
+                      Icon(FontAwesomeIcons.mapPin, size: 14, color: Colors.red,),
+                      SizedBox(width: 5,),
                       Text(
                         "City, America",
                         style: TextStyle(fontSize: 12),

@@ -71,7 +71,7 @@ class _CommentListState extends State<CommentListWidget> {
                   },
                 );
               },
-              child: Text(widget.user.solved ? "on collab" : "collab" ))),
+              child: Text(widget.user.solved ? "on collab" : "collab"))),
     );
   }
 }
