@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:konsultanku/pages/feedspage.dart';
 import 'package:konsultanku/widget/bottomNav.dart';
 import 'package:konsultanku/pages/chatPage.dart';
 import 'package:konsultanku/pages/profilePage.dart';
