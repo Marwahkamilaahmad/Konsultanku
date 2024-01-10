@@ -58,8 +58,8 @@ class PostWidget extends StatefulWidget {
   final Post post;
   final CommentPost? comment;
 
-
-  const PostWidget({Key? key, required this.post, this.comment}) : super(key: key);
+  const PostWidget({Key? key, required this.post, this.comment})
+      : super(key: key);
 
   @override
   _PostWidgetState createState() => _PostWidgetState();
@@ -70,279 +70,297 @@ class PostWidget extends StatefulWidget {
 class _PostWidgetState extends State<PostWidget> {
   int commentCount = comments.length;
 
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: appBarWidget(),
-      body: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius:
-              BorderRadius.circular(10.0), // Adjust the radius as needed
-          side: BorderSide(
-            color: Color.fromARGB(
-                255, 203, 203, 203), // Set the color of the border
-            width: 1.0, // Set the width of the border
+      body: Stack(
+        children: [
+          Container(
+            height: 350,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/Rectangle-30.png'),
+                fit: BoxFit.contain,
+              ),
+            ),
           ),
-        ),
-        color: Colors.white,
-        margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 10,
-              ),
-              if (widget.post.tag == 'branding')
-                ListTile(
-                  leading: IconButton(
-                    onPressed: () {
-                      Fluttertoast.showToast(
-                        msg: "go to profile",
-                        toastLength: Toast.LENGTH_SHORT,
-                        gravity: ToastGravity.CENTER,
-                        backgroundColor: Colors.purple,
-                        textColor: Colors.white,
-                      );
-                    },
-                    icon: CircleAvatar(
-                      // backgroundImage: AssetImage('assets/user_profile_image.png'),
-                      backgroundColor: Colors.purple[200],
-                    ),
-                  ),
-                  title: Text(widget.post.username),
-                  trailing: Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 45, 52, 146),
-                      borderRadius: BorderRadius.circular(15.0),
-                    ),
-                    child: Text(
-                      widget.post.tag,
-                      style: TextStyle(
-                        fontSize: 10,
-                        color: Colors.white, // Warna teksnya
-                      ),
-                    ),
-                  ),
-                ),
-              if (widget.post.tag == 'management' )
-                ListTile(
-                  leading: IconButton(
-                    onPressed: () {
-                      Fluttertoast.showToast(
-                        msg: "go to profile",
-                        toastLength: Toast.LENGTH_SHORT,
-                        gravity: ToastGravity.CENTER,
-                        backgroundColor: Colors.purple,
-                        textColor: Colors.white,
-                      );
-                    },
-                    icon: CircleAvatar(
-                      // backgroundImage: AssetImage('assets/user_profile_image.png'),
-                      backgroundColor: Colors.purple[200],
-                    ),
-                  ),
-                  title: Text(widget.post.username),
-                  trailing: Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 146, 45, 45),
-                      borderRadius: BorderRadius.circular(15.0),
-                    ),
-                    child: Text(
-                      widget.post.tag,
-                      style: TextStyle(
-                        fontSize: 10,
-                        color: Colors.white, // Warna teksnya
-                      ),
-                    ),
-                  ),
-                ),
-              if (widget.post.tag == 'pemasaran')
-                ListTile(
-                  leading: IconButton(
-                    onPressed: () {
-                      Fluttertoast.showToast(
-                        msg: "go to profile",
-                        toastLength: Toast.LENGTH_SHORT,
-                        gravity: ToastGravity.CENTER,
-                        backgroundColor: Colors.purple,
-                        textColor: Colors.white,
-                      );
-                    },
-                    icon: CircleAvatar(
-                      // backgroundImage: AssetImage('assets/user_profile_image.png'),
-                      backgroundColor: Colors.purple[200],
-                    ),
-                  ),
-                  title: Text(widget.post.username),
-                  trailing: Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 146, 99, 45),
-                      borderRadius: BorderRadius.circular(15.0),
-                    ),
-                    child: Text(
-                      widget.post.tag,
-                      style: TextStyle(
-                        fontSize: 10,
-                        color: Colors.white, // Warna teksnya
-                      ),
-                    ),
-                  ),
-                ),
-              if (widget.comment != null && widget.comment!.solved == false)
-                ListTile(
-                  leading: IconButton(
-                    onPressed: () {
-                      Fluttertoast.showToast(
-                        msg: "go to profile",
-                        toastLength: Toast.LENGTH_SHORT,
-                        gravity: ToastGravity.CENTER,
-                        backgroundColor: Colors.purple,
-                        textColor: Colors.white,
-                      );
-                    },
-                    icon: CircleAvatar(
-                      // backgroundImage: AssetImage('assets/user_profile_image.png'),
-                      backgroundColor: Colors.purple[200],
-                    ),
-                  ),
-                  title: Text(widget.post.username),
-                  trailing: Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 66, 66, 66),
-                      borderRadius: BorderRadius.circular(15.0),
-                    ),
-                    child: Text(
-                      "on progress task",
-                      style: TextStyle(
-                        fontSize: 10,
-                        color: Colors.white, // Warna teksnya
-                      ),
-                    ),
-                  ),
-                ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Text(widget.post.content),
-              ),
-              if (widget.post.imageUrl.isNotEmpty)
-                // Image.network(
-                //   // widget.post.imageUrl,
-                //   // fit: BoxFit.fill,
-                // ),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    IconButton(
-                      onPressed: () {
-                        setState(() {
-                          widget.post.isLiked = !widget.post.isLiked;
-                          if (widget.post.isLiked) {
-                            widget.post.likeCount++;
-                          } else {
-                            widget.post.likeCount--;
-                          }
-                        });
-                      },
-                      icon: Icon(
-                        widget.post.isLiked
-                            ? Icons.favorite
-                            : Icons.favorite_border,
-                        color: widget.post.isLiked ? Colors.red : null,
-                      ),
-                    ),
-                    Text(
-                        '${widget.post.likeCount} Suka'), // Text widget for 'Like'
-                    if (widget.post.solved == false)
-                      IconButton(
-                        onPressed: () {
-                          setState(() {
-                            widget.post.isCommenting =
-                                !widget.post.isCommenting;
-                          });
-                        },
-                        icon: Icon(Icons.comment),
-                      ),
-                    if (widget.post.solved == true)
-                      IconButton(
-                        onPressed: () {
-                          setState(() {});
-                        },
-                        icon: Icon(Icons.comment),
-                      ),
-                    Text(
-                        '${commentCount} Komentar'), // Text widget for 'Comment'
-                  ],
-                ),
-              SizedBox(
-                height: 16,
-              ),
-              Divider(color: Colors.grey),
-              if (widget.post.isCommenting)
+          SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 16.0, vertical: 8.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Enter a  comment',
+                  padding: EdgeInsets.symmetric(vertical: 30),
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                          10.0), // Adjust the radius as needed
+                      side: BorderSide(
+                        color: Color.fromARGB(
+                            255, 203, 203, 203), // Set the color of the border
+                        width: 1.0, // Set the width of the border
+                      ),
                     ),
-                  ),
-                ),
-              if (widget.post.isCommenting)
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.0),
-                  child: ElevatedButton(
-                      onPressed: () {
-                        initState();
-                        setState(() {
-                          // widget.post.commentCount += 1;
-                        });
-                      },
-                      child: Text('sent'),
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                              10), // Ubah nilai radius sesuai keinginan Anda
+                    color: Colors.white,
+                    margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: 10,
                         ),
-                      )),
+                        if (widget.post.tag == 'branding' && widget.post.solved != true)
+                          ListTile(
+                            leading: IconButton(
+                              onPressed: () {
+                                Fluttertoast.showToast(
+                                  msg: "go to profile",
+                                  toastLength: Toast.LENGTH_SHORT,
+                                  gravity: ToastGravity.CENTER,
+                                  backgroundColor: Colors.purple,
+                                  textColor: Colors.white,
+                                );
+                              },
+                              icon: CircleAvatar(
+                                // backgroundImage: AssetImage('assets/user_profile_image.png'),
+                                backgroundColor: Colors.purple[200],
+                              ),
+                            ),
+                            title: Text(widget.post.username),
+                            trailing: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 5),
+                              decoration: BoxDecoration(
+                                color: Color.fromARGB(255, 45, 52, 146),
+                                borderRadius: BorderRadius.circular(15.0),
+                              ),
+                              child: Text(
+                                widget.post.tag,
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  color: Colors.white, // Warna teksnya
+                                ),
+                              ),
+                            ),
+                          ),
+                        if (widget.post.tag == 'management' && widget.post.solved != true)
+                          ListTile(
+                            leading: IconButton(
+                              onPressed: () {
+                                Fluttertoast.showToast(
+                                  msg: "go to profile",
+                                  toastLength: Toast.LENGTH_SHORT,
+                                  gravity: ToastGravity.CENTER,
+                                  backgroundColor: Colors.purple,
+                                  textColor: Colors.white,
+                                );
+                              },
+                              icon: CircleAvatar(
+                                // backgroundImage: AssetImage('assets/user_profile_image.png'),
+                                backgroundColor: Colors.purple[200],
+                              ),
+                            ),
+                            title: Text(widget.post.username),
+                            trailing: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 5),
+                              decoration: BoxDecoration(
+                                color: Color.fromARGB(255, 146, 45, 45),
+                                borderRadius: BorderRadius.circular(15.0),
+                              ),
+                              child: Text(
+                                widget.post.tag,
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  color: Colors.white, // Warna teksnya
+                                ),
+                              ),
+                            ),
+                          ),
+                        if (widget.post.tag == 'pemasaran' && widget.post.solved != true)
+                          ListTile(
+                            leading: IconButton(
+                              onPressed: () {
+                                Fluttertoast.showToast(
+                                  msg: "go to profile",
+                                  toastLength: Toast.LENGTH_SHORT,
+                                  gravity: ToastGravity.CENTER,
+                                  backgroundColor: Colors.purple,
+                                  textColor: Colors.white,
+                                );
+                              },
+                              icon: CircleAvatar(
+                                // backgroundImage: AssetImage('assets/user_profile_image.png'),
+                                backgroundColor: Colors.purple[200],
+                              ),
+                            ),
+                            title: Text(widget.post.username),
+                            trailing: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 5),
+                              decoration: BoxDecoration(
+                                color: Color.fromARGB(255, 146, 99, 45),
+                                borderRadius: BorderRadius.circular(15.0),
+                              ),
+                              child: Text(
+                                widget.post.tag,
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  color: Colors.white, // Warna teksnya
+                                ),
+                              ),
+                            ),
+                          ),
+                        if (widget.post.solved != false)
+                          ListTile(
+                            leading: IconButton(
+                              onPressed: () {
+                                Fluttertoast.showToast(
+                                  msg: "go to profile",
+                                  toastLength: Toast.LENGTH_SHORT,
+                                  gravity: ToastGravity.CENTER,
+                                  backgroundColor: Colors.purple,
+                                  textColor: Colors.white,
+                                );
+                              },
+                              icon: CircleAvatar(
+                                // backgroundImage: AssetImage('assets/user_profile_image.png'),
+                                backgroundColor: Colors.purple[200],
+                              ),
+                            ),
+                            title: Text(widget.post.username),
+                            trailing: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 5),
+                              decoration: BoxDecoration(
+                                color: Color.fromARGB(255, 66, 66, 66),
+                                borderRadius: BorderRadius.circular(15.0),
+                              ),
+                              child: Text(
+                                "on progress task",
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  color: Colors.white, // Warna teksnya
+                                ),
+                              ),
+                            ),
+                          ),
+                        Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Text(widget.post.content),
+                        ),
+                        if (widget.post.imageUrl.isNotEmpty)
+                          // Image.network(
+                          //   // widget.post.imageUrl,
+                          //   // fit: BoxFit.fill,
+                          // ),
+
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    widget.post.isLiked = !widget.post.isLiked;
+                                    if (widget.post.isLiked) {
+                                      widget.post.likeCount++;
+                                    } else {
+                                      widget.post.likeCount--;
+                                    }
+                                  });
+                                },
+                                icon: Icon(
+                                  widget.post.isLiked
+                                      ? Icons.favorite
+                                      : Icons.favorite_border,
+                                  color:
+                                      widget.post.isLiked ? Colors.red : null,
+                                ),
+                              ),
+                              Text(
+                                  '${widget.post.likeCount} Suka'), // Text widget for 'Like'
+                              if (widget.post.solved == false)
+                                IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      widget.post.isCommenting =
+                                          !widget.post.isCommenting;
+                                    });
+                                  },
+                                  icon: Icon(Icons.comment),
+                                ),
+                              if (widget.post.solved == true)
+                                IconButton(
+                                  onPressed: () {
+                                    setState(() {});
+                                  },
+                                  icon: Icon(Icons.comment),
+                                ),
+                              Text(
+                                  '${commentCount} Komentar'), // Text widget for 'Comment'
+                            ],
+                          ),
+                        SizedBox(
+                          height: 16,
+                        ),
+                        Divider(color: Colors.grey),
+                        if (widget.post.isCommenting)
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 16.0, vertical: 8.0),
+                            child: TextField(
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(),
+                                hintText: 'Enter a  comment',
+                              ),
+                            ),
+                          ),
+                        if (widget.post.isCommenting)
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 16.0),
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  setState(() {
+                                    // widget.post.commentCount += 1;
+                                  });
+                                },
+                                child: Text('sent'),
+                                style: ElevatedButton.styleFrom(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(
+                                        10), // Ubah nilai radius sesuai keinginan Anda
+                                  ),
+                                )),
+                          ),
+                        SizedBox(
+                          height: 16,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 1.0),
+                          child: ListView.builder(
+                            shrinkWrap: true,
+                            physics: NeverScrollableScrollPhysics(),
+                            itemCount: comments.length,
+                            itemBuilder: (context, index) {
+                              return GestureDetector(
+                                  onTap: () {},
+                                  child: CommentListWidget(
+                                    user: comments[index],
+                                    post: widget.post,
+                                  ));
+                            },
+                          ),
+                        ),
+                        SizedBox(
+                          height: 16,
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
-              SizedBox(
-                height: 16,
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 1.0),
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemCount: comments.length,
-                  itemBuilder: (context, index) {
-                    return GestureDetector(
-                        onTap: () {},
-                        child: CommentListWidget(
-                          user: comments[index],
-                          post: widget.post,
-                        ));
-                  },
-                ),
-              ),
-              SizedBox(
-                height: 16,
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

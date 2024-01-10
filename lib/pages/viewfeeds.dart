@@ -36,7 +36,7 @@ class _FeedsWidgetState extends State<FeedsWidget> {
           SizedBox(
             height: 10,
           ),
-          if (widget.post.tag == 'branding')
+          if (widget.post.tag == 'branding' && widget.post.solved != true)
             ListTile(
               leading: IconButton(
                 onPressed: () {
@@ -70,7 +70,7 @@ class _FeedsWidgetState extends State<FeedsWidget> {
                 ),
               ),
             ),
-          if (widget.post.tag == 'management')
+          if (widget.post.tag == 'management' && widget.post.solved != true)
             ListTile(
               leading: IconButton(
                 onPressed: () {
@@ -104,7 +104,7 @@ class _FeedsWidgetState extends State<FeedsWidget> {
                 ),
               ),
             ),
-          if (widget.post.tag == 'pemasaran')
+          if (widget.post.tag == 'pemasaran' && widget.post.solved != true)
             ListTile(
               leading: IconButton(
                 onPressed: () {
@@ -131,6 +131,40 @@ class _FeedsWidgetState extends State<FeedsWidget> {
                 ),
                 child: Text(
                   widget.post.tag,
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Colors.white, // Warna teksnya
+                  ),
+                ),
+              ),
+            ),
+          if (widget.post.solved != false)
+            ListTile(
+              leading: IconButton(
+                onPressed: () {
+                  Fluttertoast.showToast(
+                    msg: "go to profile",
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.CENTER,
+                    backgroundColor: Colors.purple,
+                    textColor: Colors.white,
+                  );
+                },
+                icon: CircleAvatar(
+                  // backgroundImage: AssetImage('assets/user_profile_image.png'),
+                  backgroundColor: Colors.purple[200],
+                ),
+              ),
+              title: Text(widget.post.username),
+              trailing: Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 66, 66, 66),
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                child: Text(
+                  "on progress task",
                   style: TextStyle(
                     fontSize: 10,
                     color: Colors.white, // Warna teksnya
