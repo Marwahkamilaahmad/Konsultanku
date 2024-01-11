@@ -1,87 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:konsultanku/pages/signup.dart';
-
-
-// class MyHomePage extends StatefulWidget {
-//  MyHomePage({Key? key, required this.title}) : super(key: key);
-
-//  final String title;
-
-//  @override
-//  _MyHomePageState createState() => _MyHomePageState();
-// }
-
-// class _MyHomePageState extends State<MyHomePage> {
-//  TextEditingController _usernameController = TextEditingController();
-//  TextEditingController _passwordController = TextEditingController();
-
-//  @override
-//  Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text(widget.title),
-//       ),
-//       body: Center(
-//         child: Padding(
-//           padding: const EdgeInsets.all(16.0),
-//           child: Column(
-//             mainAxisAlignment: MainAxisAlignment.center,
-//             children: <Widget>[
-//               TextField(
-//                 controller: _usernameController,
-//                 decoration: InputDecoration(
-//                  labelText: 'Username',
-//                  border: OutlineInputBorder(),
-//                 ),
-//               ),
-//               SizedBox(height: 16),
-//               TextField(
-//                 controller: _passwordController,
-//                 obscureText: true,
-//                 decoration: InputDecoration(
-//                  labelText: 'Password',
-//                  border: OutlineInputBorder(),
-//                 ),
-//               ),
-//               SizedBox(height: 16),
-//               ElevatedButton(
-//                 onPressed: () {
-//                  // Handle login functionality here
-//                 },
-//                 child: Text('Sign In'),
-//               ),
-//               SizedBox(height: 16),
-//               TextButton(
-//                 onPressed: () {
-//                  // Handle forgot password functionality here
-//                 },
-//                 child: Text('Forgot Your Password?'),
-//               ),
-//               SizedBox(height: 16),
-//               ElevatedButton(
-//                 onPressed: () {
-//                   Navigator.push(context,
-//                       MaterialPageRoute(builder: (context) => SignUpPage()));
-//                 },
-//                 child: Text('Sign Up'),
-//                 style: ElevatedButton.styleFrom(
-//                   primary: Colors.purple, // Set background color to purple
-//                  onPrimary: Colors.white, 
-//                 ),
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//  }
-// }
-
+import 'package:google_fonts/google_fonts.dart';
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+  MyHomePage({Key? key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -94,75 +16,119 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Stack(
-        children: [
-          Container(
-            height: 350,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/Rectangle-30.png'),
-                fit: BoxFit.contain,
+      backgroundColor: Color.fromARGB(255, 17, 64, 204),
+      body: SafeArea(
+        child: Column(
+          children: [
+            const Expanded(
+              flex: 1,
+              child: Center(),
+            ),
+            Expanded(
+              flex: 9,
+              child: Container(
+                alignment: Alignment.center,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(40),
+                      topRight: Radius.circular(40)),
+                  color: Colors.white,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        'Login Konsultanku',
+                        style: GoogleFonts.inter(
+                          fontSize: 24.0,
+                          color: const Color(0xFF15224F),
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        alignment: Alignment.center,
+                        height: 45,
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: TextField(
+                          controller: _usernameController,
+                          style: GoogleFonts.inter(
+                            fontSize: 16.0,
+                            color: const Color(0xFF15224F),
+                          ),
+                          maxLines: 1,
+                          decoration: InputDecoration(
+                            labelText: 'Username',
+                            border: OutlineInputBorder(),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 16),
+                      Container(
+                        alignment: Alignment.center,
+                        height: 45,
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: TextField(
+                          controller: _passwordController,
+                          style: GoogleFonts.inter(
+                            fontSize: 16.0,
+                            color: const Color(0xFF15224F),
+                          ),
+                          maxLines: 1,
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            labelText: 'Password',
+                            border: OutlineInputBorder(),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 16),
+                      Container(
+                        height: 35,
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            elevation: MaterialStatePropertyAll(5),
+                            backgroundColor: MaterialStatePropertyAll(
+                                Color.fromARGB(255, 41, 76, 193)),
+                          ),
+                          onPressed: () {
+                            // Handle login functionality here
+                          },
+                          child: Text(
+                            'Sign In',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 16),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text("have'nt registered yet ?"),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignUpPage()),
+                              );
+                            },
+                            child: Text('Sign up here'),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 16),
+                    ],
+                  ),
+                ),
               ),
             ),
-          ),
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  TextField(
-                    controller: _usernameController,
-                    decoration: InputDecoration(
-                      labelText: 'Username',
-                      border: OutlineInputBorder(),
-                    ),
-                  ),
-                  SizedBox(height: 16),
-                  TextField(
-                    controller: _passwordController,
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      labelText: 'Password',
-                      border: OutlineInputBorder(),
-                    ),
-                  ),
-                  SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: () {
-                      // Handle login functionality here
-                    },
-                    child: Text('Sign In'),
-                  ),
-                  SizedBox(height: 16),
-                  TextButton(
-                    onPressed: () {
-                      // Handle forgot password functionality here
-                    },
-                    child: Text('Forgot Your Password?'),
-                  ),
-                  SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignUpPage()),
-                      );
-                    },
-                    child: Text('Sign Up'),
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.purple,
-                      onPrimary: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

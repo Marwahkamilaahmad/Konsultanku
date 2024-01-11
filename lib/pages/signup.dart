@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:konsultanku/main.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -9,138 +11,164 @@ class _SignUpPageState extends State<SignUpPage> {
   final _formKey = GlobalKey<FormState>();
   String? _role = "", _email = "", _username = "", _password = "";
 
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text('Sign Up'),
-      ),
-      body: Stack(children: [
-        Container(
-          height: 350,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/images/Rectangle-30.png'),
-              fit: BoxFit.contain,
-            ),
+      backgroundColor: Color.fromARGB(255, 17, 64, 204),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Card(
+          color: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15.0),
+          ),
+          child: Column(
+            children: [
+              Center(
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 16,
+                      ),
+                      Text(
+                        'Register Konsultanku',
+                        style: GoogleFonts.inter(
+                          fontSize: 24.0,
+                          color: const Color(0xFF15224F),
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Form(
+                        key: _formKey,
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              alignment: Alignment.center,
+                              height: 45,
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                    labelText: 'Sign Up As',
+                                    border: OutlineInputBorder()),
+                                validator: (value) {
+                                  if (value == "") {
+                                    return 'enter your role';
+                                  }
+                                  return null;
+                                },
+                                onSaved: (value) {
+                                  _role = value;
+                                },
+                              ),
+                            ),
+                            SizedBox(height: 16),
+                            Container(
+                              alignment: Alignment.center,
+                              height: 45,
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                    labelText: 'Email',
+                                    border: OutlineInputBorder()),
+                                validator: (value) {
+                                  if (value == "") {
+                                    return 'Please enter your email';
+                                  }
+                                  return null;
+                                },
+                                onSaved: (value) {
+                                  _email = value;
+                                },
+                              ),
+                            ),
+                            SizedBox(height: 16),
+                            Container(
+                              alignment: Alignment.center,
+                              height: 45,
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                    labelText: 'Username',
+                                    border: OutlineInputBorder()),
+                                validator: (value) {
+                                  if (value == "") {
+                                    return 'Please enter your username';
+                                  }
+                                  return null;
+                                },
+                                onSaved: (value) {
+                                  _username = value;
+                                },
+                              ),
+                            ),
+                            SizedBox(height: 16),
+                            Container(
+                              alignment: Alignment.center,
+                              height: 45,
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                    labelText: 'Password',
+                                    border: OutlineInputBorder()),
+                                validator: (value) {
+                                  if (value == "") {
+                                    return 'Please enter your password';
+                                  }
+                                  return null;
+                                },
+                                onSaved: (value) {
+                                  _password = value;
+                                },
+                                obscureText: true,
+                              ),
+                            ),
+                            SizedBox(height: 16),
+                            Container(
+                              height: 35,
+                              child: ElevatedButton(
+                                style: ButtonStyle(
+                                  elevation: MaterialStatePropertyAll(10),
+                                  backgroundColor: MaterialStatePropertyAll(
+                                    Color.fromARGB(255, 41, 76, 193),
+                                  ),
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => NavigateApp()),
+                                  );
+                                  if (_formKey.currentState!.validate()) {
+                                    _formKey.currentState!.save();
+                                    // TODO: Perform sign up action
+                                  }
+                                },
+                                child: Text(
+                                  'Sign Up',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
-        Center(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                children: <Widget>[
-                  TextFormField(
-                    decoration: InputDecoration(
-                        labelText: 'Sign Up As', border: OutlineInputBorder()),
-                    validator: (value) {
-                      if (value == "") {
-                        return 'enter your role';
-                      }
-                      return null;
-                    },
-                    onSaved: (value) {
-                      _role = value;
-                    },
-                  ),
-                  SizedBox(height: 16),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        labelText: 'Email', border: OutlineInputBorder()),
-                    validator: (value) {
-                      if (value == "") {
-                        return 'Please enter your email';
-                      }
-                      return null;
-                    },
-                    onSaved: (value) {
-                      _email = value;
-                    },
-                  ),
-                  SizedBox(height: 16),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        labelText: 'Username', border: OutlineInputBorder()),
-                    validator: (value) {
-                      if (value == "") {
-                        return 'Please enter your username';
-                      }
-                      return null;
-                    },
-                    onSaved: (value) {
-                      _username = value;
-                    },
-                  ),
-                  SizedBox(height: 16),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        labelText: 'Password', border: OutlineInputBorder()),
-                    validator: (value) {
-                      if (value == "") {
-                        return 'Please enter your password';
-                      }
-                      return null;
-                    },
-                    onSaved: (value) {
-                      _password = value;
-                    },
-                    obscureText: true,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 16.0),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          _formKey.currentState!.save();
-                          // TODO: Perform sign up action
-                        }
-                      },
-                      child: Text('Sign Up'),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        )
-      ]),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-            backgroundColor: Color.fromRGBO(101, 98, 253, 1),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
-            backgroundColor: Color.fromRGBO(101, 98, 253, 1),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
-            backgroundColor: Color.fromRGBO(101, 98, 253, 1),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-            backgroundColor: Color.fromRGBO(101, 98, 253, 1),
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Color.fromARGB(255, 255, 255, 255),
-        onTap: _onItemTapped,
       ),
     );
   }
