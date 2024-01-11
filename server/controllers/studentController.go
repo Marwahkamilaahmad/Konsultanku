@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"konsultanku-app/database"
+	function "konsultanku-app/database/functions"
 	"konsultanku-app/models"
 	"net/http"
 
@@ -11,21 +12,46 @@ import (
 )
 
 func Problem(c *gin.Context) {
+
 	var problems []models.Problem
 
-	database.DB.Joins("Tags").Find(&problems)
-
 	category := c.Query("category")
-	if category == "" {
-		c.JSON(http.StatusOK, gin.H{"data": problems})
-		return
+	if category != "" {
+		problemsWithCategory, err := function.GetProblemWithTags(category)
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"message": err})
+			return
+		}
+		problems = problemsWithCategory
+	} else {
+		allProblem, err := function.GetAllProblem()
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"message": err})
+			return
+		}
+		problems = allProblem
+	}
+	result := []map[string]interface{}{}
+	for i := range problems {
+		mse, _ := function.GetMseByID(problems[i].MseID.String())
+		tag, _ := function.GetTagByID(problems[i].TagID)
+		jsonData := map[string]interface{}{
+			"id_problem": problems[i].ID,
+			"mse": map[string]interface{}{
+				"mse_id":    mse.ID,
+				"mse_name":  mse.MseName,
+				"mse_since": mse.MseSince,
+			},
+			"problem":         problems[i].Problem,
+			"like":            problems[i].Like,
+			"comment_count":   problems[i].CommentCount,
+			"problem_created": problems[i].ProblemCreated,
+			"tag_name":        tag.TagName,
+		}
+		result = append(result, jsonData)
 	}
 
-	var tag models.Tags
-
-	database.DB.Find(&tag, "tag_name = ?", category)
-	database.DB.Where("tag_id = ?", tag.ID).Find(&problems)
-	c.JSON(http.StatusOK, gin.H{"data": problems})
+	c.JSON(http.StatusOK, gin.H{"data": result})
 }
 
 func ProblemByID(c *gin.Context) {
@@ -35,14 +61,28 @@ func ProblemByID(c *gin.Context) {
 	var mse models.MseProfile
 
 	problemID := c.Param("id")
-	result := database.DB.Preload("MseID").Preload("TagID").First(&problem, "id = ?", problemID)
+	result := database.DB.First(&problem, "id = ?", problemID)
 	if result.Error == gorm.ErrRecordNotFound {
 		c.JSON(http.StatusBadRequest, gin.H{"message": "Problem not found"})
 		return
 	}
+
 	database.DB.First(&mse, "id = ?", problem.MseID)
 	database.DB.First(&tag, "id = ?", problem.TagID)
 
-	c.JSON(http.StatusOK, gin.H{"data": gin.H{"problem": problem, "mse": mse, "tag": tag}})
+	jsonData := map[string]interface{}{
+		"id_problem":      problem.ID,
+		"like":            problem.Like,
+		"comment_count":   problem.CommentCount,
+		"problem":         problem.Problem,
+		"problem_created": problem.ProblemCreated,
+		"tag_name":        tag.TagName,
+		"mse": map[string]interface{}{
+			"mse_name":  mse.MseName,
+			"mse_since": mse.MseSince,
+		},
+	}
+
+	c.JSON(http.StatusOK, gin.H{"data": jsonData})
 	return
 }

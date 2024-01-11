@@ -5,6 +5,7 @@ import (
 	"konsultanku-app/models"
 	"os"
 
+	"github.com/joho/godotenv"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -13,6 +14,11 @@ var DB *gorm.DB
 
 func DatabaseConnection() {
 
+	err := godotenv.Load(".env")
+	if err != nil {
+		panic("Environment is not detected")
+	}
+
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s",
 		os.Getenv("DB_USERNAME"),
 		os.Getenv("DB_PASSWORD"),
@@ -20,7 +26,7 @@ func DatabaseConnection() {
 		os.Getenv("DB_PORT"),
 		os.Getenv("DB_DATABASE"))
 
-	if dsn != "" {
+	if dsn == "" {
 		panic("dsn not detected")
 	}
 
@@ -35,6 +41,7 @@ func DatabaseConnection() {
 		&models.TeamComment{},
 		&models.MseProfile{},
 		&models.Problem{},
+		&models.Collaboration{},
 	)
 
 	if databaseError != nil {
