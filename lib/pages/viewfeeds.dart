@@ -50,7 +50,8 @@ class _FeedsWidgetState extends State<FeedsWidget> {
                 },
                 icon: CircleAvatar(
                   // backgroundImage: AssetImage('assets/user_profile_image.png'),
-                  backgroundColor: Colors.purple[200],
+                  // backgroundColor: Colors.purple[200],
+                  backgroundImage: NetworkImage(widget.post.imageUrl),
                 ),
               ),
               title: Text(widget.post.username),
@@ -84,7 +85,8 @@ class _FeedsWidgetState extends State<FeedsWidget> {
                 },
                 icon: CircleAvatar(
                   // backgroundImage: AssetImage('assets/user_profile_image.png'),
-                  backgroundColor: Colors.purple[200],
+                  // backgroundColor: Colors.purple[200],
+                  backgroundImage: NetworkImage(widget.post.imageUrl),
                 ),
               ),
               title: Text(widget.post.username),
@@ -118,7 +120,8 @@ class _FeedsWidgetState extends State<FeedsWidget> {
                 },
                 icon: CircleAvatar(
                   // backgroundImage: AssetImage('assets/user_profile_image.png'),
-                  backgroundColor: Colors.purple[200],
+                  // backgroundColor: Colors.purple[200],
+                  backgroundImage: NetworkImage(widget.post.imageUrl),
                 ),
               ),
               title: Text(widget.post.username),
@@ -152,7 +155,8 @@ class _FeedsWidgetState extends State<FeedsWidget> {
                 },
                 icon: CircleAvatar(
                   // backgroundImage: AssetImage('assets/user_profile_image.png'),
-                  backgroundColor: Colors.purple[200],
+                  // backgroundColor: Colors.purple[200],
+                  backgroundImage: NetworkImage(widget.post.imageUrl),
                 ),
               ),
               title: Text(widget.post.username),

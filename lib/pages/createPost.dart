@@ -40,35 +40,49 @@ class _CreatePostState extends State<CreatePost> {
                       leading: IconButton(
                         onPressed: () {},
                         icon: CircleAvatar(
-                          // backgroundImage: AssetImage('assets/user_profile_image.png'),
-                          backgroundColor: Colors.purple[200],
+                          backgroundImage: NetworkImage("https://i.mydramalist.com/jV1Awf.jpg"),
+                          // backgroundColor: Colors.purple[200],
+
                         ),
                       ),
-                      title: Text("username"),
+                      title: Text("Aldini Mukti"),
                     ),
-                    SizedBox(height: 20),
-                    TextField(
-                      controller: _categoryController,
-                      decoration: InputDecoration(
-                        labelText: 'Category',
-                        border: OutlineInputBorder(),
-                      ),
-                    ),
-                    SizedBox(height: 5),
-                    TextField(
-                      controller: _categoryController,
-                      decoration: InputDecoration(
-                        labelText: 'Judul',
-                        border: OutlineInputBorder(),
-                      ),
-                    ),
-                    SizedBox(height: 5),
-                    TextField(
-                      controller: _descriptionController,
-                      maxLines: 5,
-                      decoration: InputDecoration(
-                        labelText: 'Description',
-                        border: OutlineInputBorder(),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(
+                        children: [
+                          SizedBox(height: 20),
+                          SizedBox(
+                            height: 40,
+                            child: TextField(
+                              controller: _categoryController,
+                              decoration: InputDecoration(
+                                labelText: 'Category',
+                                border: OutlineInputBorder(),
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          SizedBox(
+                            height: 40,
+                            child: TextField(
+                              controller: _categoryController,
+                              decoration: InputDecoration(
+                                labelText: 'Judul',
+                                border: OutlineInputBorder(),
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          TextField(
+                            controller: _descriptionController,
+                            maxLines: 5,
+                            decoration: InputDecoration(
+                              labelText: 'Description',
+                              border: OutlineInputBorder(),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     SizedBox(height: 20),
@@ -87,8 +101,8 @@ class _CreatePostState extends State<CreatePost> {
                         ),
                         ElevatedButton(
                           style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.all<Color>(Color.fromARGB(255, 52, 68, 188)),
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                                Color.fromARGB(255, 52, 68, 188)),
                             shape: MaterialStateProperty.all<
                                 RoundedRectangleBorder>(
                               RoundedRectangleBorder(

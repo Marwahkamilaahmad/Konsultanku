@@ -19,10 +19,10 @@ class Post {
   bool solved;
 
   Post({
-    required this.username,
-    required this.content,
-    required this.tag,
-    required this.imageUrl,
+    this.username = "",
+    this.content = "",
+    this.tag = "",
+    this.imageUrl = "",
     this.isLiked = false,
     this.likeCount = 0,
     this.commentCount = 0,
@@ -34,23 +34,29 @@ class Post {
 class CommentPost {
   final String username;
   final String comment;
+  final String imageUrl;
   bool solved;
 
   CommentPost({
     required this.username,
     required this.comment,
     this.solved = false,
+    this.imageUrl = "",
   });
 }
 
 final List<CommentPost> comments = [
   CommentPost(
-      username: "username 1",
-      comment: "Another exception was thrown: Assertion failed:",
+      username: "Kenshi Yamaguchi",
+      comment: "Saya tertarik dengan permasalahan yang di tawarkan oleh anda",
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD1oYHOkWvRtUd65uGKIQPyMl2aFwBaP0d6g&usqp=CAU",
       solved: false),
   CommentPost(
-      username: "username 2",
-      comment: "Another exception was thrown: Assertion failed:",
+      username: "Minzi Yonezu",
+      comment:
+          "Saya ingin membantu permasalahan anda. boleh kolaborasi bersama ?",
+      imageUrl:
+          "https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/2023/01/09/1577281958.jpg",
       solved: false),
 ];
 
@@ -108,7 +114,8 @@ class _PostWidgetState extends State<PostWidget> {
                         SizedBox(
                           height: 10,
                         ),
-                        if (widget.post.tag == 'branding' && widget.post.solved != true)
+                        if (widget.post.tag == 'branding' &&
+                            widget.post.solved != true)
                           ListTile(
                             leading: IconButton(
                               onPressed: () {
@@ -122,7 +129,9 @@ class _PostWidgetState extends State<PostWidget> {
                               },
                               icon: CircleAvatar(
                                 // backgroundImage: AssetImage('assets/user_profile_image.png'),
-                                backgroundColor: Colors.purple[200],
+                                // backgroundColor: Colors.purple[200],
+                                backgroundImage:
+                                    NetworkImage(widget.post.imageUrl),
                               ),
                             ),
                             title: Text(widget.post.username),
@@ -142,7 +151,8 @@ class _PostWidgetState extends State<PostWidget> {
                               ),
                             ),
                           ),
-                        if (widget.post.tag == 'management' && widget.post.solved != true)
+                        if (widget.post.tag == 'management' &&
+                            widget.post.solved != true)
                           ListTile(
                             leading: IconButton(
                               onPressed: () {
@@ -156,7 +166,9 @@ class _PostWidgetState extends State<PostWidget> {
                               },
                               icon: CircleAvatar(
                                 // backgroundImage: AssetImage('assets/user_profile_image.png'),
-                                backgroundColor: Colors.purple[200],
+                                // backgroundColor: Colors.purple[200],
+                                backgroundImage:
+                                    NetworkImage(widget.post.imageUrl),
                               ),
                             ),
                             title: Text(widget.post.username),
@@ -176,7 +188,8 @@ class _PostWidgetState extends State<PostWidget> {
                               ),
                             ),
                           ),
-                        if (widget.post.tag == 'pemasaran' && widget.post.solved != true)
+                        if (widget.post.tag == 'pemasaran' &&
+                            widget.post.solved != true)
                           ListTile(
                             leading: IconButton(
                               onPressed: () {
@@ -190,7 +203,9 @@ class _PostWidgetState extends State<PostWidget> {
                               },
                               icon: CircleAvatar(
                                 // backgroundImage: AssetImage('assets/user_profile_image.png'),
-                                backgroundColor: Colors.purple[200],
+                                // backgroundColor: Colors.purple[200],
+                                backgroundImage:
+                                    NetworkImage(widget.post.imageUrl),
                               ),
                             ),
                             title: Text(widget.post.username),
@@ -224,7 +239,9 @@ class _PostWidgetState extends State<PostWidget> {
                               },
                               icon: CircleAvatar(
                                 // backgroundImage: AssetImage('assets/user_profile_image.png'),
-                                backgroundColor: Colors.purple[200],
+                                // backgroundColor: Colors.purple[200],
+                                backgroundImage:
+                                    NetworkImage(widget.post.imageUrl),
                               ),
                             ),
                             title: Text(widget.post.username),

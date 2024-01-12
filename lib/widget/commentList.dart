@@ -34,10 +34,11 @@ class _CommentListState extends State<CommentListWidget> {
       margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       child: ListTile(
           leading: CircleAvatar(
-            backgroundColor: Colors.pink,
+            // backgroundColor: Colors.pink,
+            backgroundImage: NetworkImage(widget.user.imageUrl),
           ),
-          title: Text("widget.post.username"),
-          subtitle: Text("this is comment after sent"),
+          title: Text(widget.user.username),
+          subtitle: Text(widget.user.comment),
           trailing: TextButton(
               onPressed: () {
                 showDialog(
@@ -71,7 +72,7 @@ class _CommentListState extends State<CommentListWidget> {
                   },
                 );
               },
-              child: Text(widget.user.solved ? "on collab" : "collab" ))),
+              child: Text(widget.user.solved ? "on collab" : "collab"))),
     );
   }
 }

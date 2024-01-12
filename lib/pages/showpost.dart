@@ -13,17 +13,19 @@ class ShowPost extends StatefulWidget {
 class _ShowPostState extends State<ShowPost> {
   final List<Post> posts = [
     Post(
-      username: 'User1',
-      content: 'Post content 1',
-      imageUrl: 'assets/images/image1.jpg',
-      tag: 'management',
-      solved: true,
+      username: 'Aldini Mukti',
+      content: 'Halo semuanya, saya dari ALFAGA sedang mencari bantuan untuk membuat website produk kami. Saat ini, kami mengalami kendala karena kurangnya penguasaan teknologi. Kami percaya bahwa memiliki website dapat membantu memperluas jangkauan produk kami dan meningkatkan kehadiran online',
+      imageUrl: "https://i.mydramalist.com/jV1Awf.jpg",
+      tag: 'pemasaran',
+      likeCount: 45,
+      solved: false,
     ),
     Post(
-      username: 'User3',
-      content: 'Post content 2',
-      imageUrl: 'assets/images/image2.jpg',
-      tag: 'branding',
+      username: 'Jia Chou',
+      content: 'Kami mencari saran, panduan, atau bantuan dari rekan-rekan UMKM yang memiliki pengalaman atau keahlian dalam Pemahaman dan penerapan teknologi dalam manajemen bisnis UMKM.Rekomendasi aplikasi atau platform yang dapat membantu dalam meningkatkan efisiensi operasional.Pelatihan atau sumber daya yang dapat membantu tim kami meningkatkan keterampilan teknologi',
+      imageUrl: "https://images.soco.id/374-c7b20894fbc6b8fc71b49fd3541e67e7.jpg.jpeg",
+      tag: 'management',
+      likeCount: 23,
     ),
     Post(
       username: 'User4',

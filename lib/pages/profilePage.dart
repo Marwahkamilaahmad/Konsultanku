@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:konsultanku/pages/feedspage.dart';
 import 'package:konsultanku/pages/identityPage.dart';
 import 'package:konsultanku/pages/userActivityPage.dart';
 import 'package:konsultanku/pages/userPostPage.dart';
 import 'package:konsultanku/widget/userProfile.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -11,7 +13,7 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   int selected = 0;
-  bool click = false;
+  int click = 0;
   List<Widget> userPages = [
     IdentityPage(),
     UserPost(),
@@ -34,21 +36,28 @@ class _ProfilePageState extends State<ProfilePage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    "Marwah Kamila Ahmad",
+                    "ALDINI MUKTI",
                     style: TextStyle(fontSize: 16),
                   ),
                   SizedBox(height: 4),
                   Text(
-                    "Student",
+                    "MSME",
                     style: TextStyle(fontSize: 12),
                   ),
                   SizedBox(height: 4),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.pin_rounded),
+                      Icon(
+                        FontAwesomeIcons.mapPin,
+                        size: 14,
+                        color: Colors.red,
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
                       Text(
-                        "City, America",
+                        "City, Jakarta",
                         style: TextStyle(fontSize: 12),
                       ),
                     ],
@@ -56,10 +65,10 @@ class _ProfilePageState extends State<ProfilePage> {
                 ],
               ),
             ),
-            UserEvents(onTab: (index) {
+            UserEvents( selectedTab: click, onTab: (index, clicked) {
               setState(() {
                 selected = index;
-                click = !click;
+                click = clicked;
               });
             }),
             Expanded(
@@ -75,9 +84,14 @@ class _ProfilePageState extends State<ProfilePage> {
 }
 
 class UserEvents extends StatelessWidget {
-  final Function(int) onTab;
+  final Function(int, int) onTab;
+  final int selectedTab;
 
-  const UserEvents({Key? key, required this.onTab}) : super(key: key);
+  Color getBorderColor(int tabIndex) {
+    return tabIndex == selectedTab ? Colors.blue : Colors.black;
+  }
+
+  const UserEvents({Key? key, required this.onTab, required this.selectedTab}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -89,9 +103,10 @@ class UserEvents extends StatelessWidget {
             child: OutlinedButton(
               style: OutlinedButton.styleFrom(
                 shape: LinearBorder.bottom(
-                    side: BorderSide(color: Colors.black)), // Warna garis bawah
+                    side: BorderSide(
+                        color: getBorderColor(0))), // Warna garis bawah
               ),
-              onPressed: () => onTab(0),
+              onPressed: () => onTab(0, 0),
               child: Text("Identity"),
             ),
           ),
@@ -102,9 +117,10 @@ class UserEvents extends StatelessWidget {
             child: OutlinedButton(
               style: OutlinedButton.styleFrom(
                 shape: LinearBorder.bottom(
-                    side: BorderSide(color: Colors.black)), // Warna garis bawah
+                    side: BorderSide(
+                        color: getBorderColor(1))), // Warna garis bawah
               ),
-              onPressed: () => onTab(1),
+              onPressed: () => {onTab(1, 1)},
               child: Text("Post"),
             ),
           ),
@@ -116,11 +132,9 @@ class UserEvents extends StatelessWidget {
               style: OutlinedButton.styleFrom(
                 shape: LinearBorder.bottom(
                     side: BorderSide(
-                        color: onTab == false
-                            ? const Color.fromARGB(0, 0, 0, 0)
-                            : Colors.black)), // Warna garis bawah
+                        color: getBorderColor(0))), // Warna garis bawah
               ),
-              onPressed: () => onTab(2),
+              onPressed: () => onTab(2, 2),
               child: Text("Activity"),
             ),
           ),
