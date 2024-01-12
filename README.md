@@ -3,7 +3,7 @@
 
 -Member : 
 1. Nikita Dinda Azizah (Hustler)
-2. Yashinta ( Hipster )
+2. Yashinta Asa Imama ( Hipster )
 3. Dzaki Maulana A ( Hacker )
 4. Marwah Kamila Ahmad ( Hacker )
 
