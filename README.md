@@ -7,6 +7,13 @@
 3. Dzaki Maulana A ( Hacker )
 4. Marwah Kamila Ahmad ( Hacker )
 
+## Tools and Tech Stack :
+1. Firebase
+2. Go language
+3. Flutter
+4. MySql
+5. GCP
+   
 ## REST API Documentation
 - [Backend](https://github.com/Marwahkamilaahmad/Konsultanku/tree/main/server)
 - [API Documentation](https://documenter.getpostman.com/view/30161030/2s9YsMBC4g)
