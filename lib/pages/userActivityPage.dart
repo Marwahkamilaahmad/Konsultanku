@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:konsultanku/widget/activityList.dart';
 
 class Activity {
   final String id;
@@ -21,12 +22,22 @@ class _UserActivityState extends State<UserActivity> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-        child: Column(
-      children: [
-        Text(cobaActive[0].id),
-        Text(cobaActive[0].keterangan),
+    return Column(
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.all(2.0),
+          child: ListView.builder(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            itemCount: cobaActive.length,
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                child: ActivityListWidget(),
+              );
+            },
+          ),
+        ),
       ],
-    ));
+    );
   }
 }

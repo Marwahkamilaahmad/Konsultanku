@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:konsultanku/main.dart';
 import 'package:konsultanku/pages/signup.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -96,7 +97,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                 Color.fromARGB(255, 41, 76, 193)),
                           ),
                           onPressed: () {
-                            // Handle login functionality here
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => NavigateApp()),
+                            );
                           },
                           child: Text(
                             'Sign In',

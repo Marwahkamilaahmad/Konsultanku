@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:konsultanku/main.dart';
+import 'package:konsultanku/pages/loginpage.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -146,7 +147,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => NavigateApp()),
+                                        builder: (context) => MyHomePage()),
                                   );
                                   if (_formKey.currentState!.validate()) {
                                     _formKey.currentState!.save();
