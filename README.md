@@ -30,18 +30,34 @@
    - If collaboration happens, the server will allow some rules.
 
 ## Screenshots App
-
+1. Login Page
 <img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_02.png" alt="Deskripsi Gambar" width="300" height="380">
+2. Register Page
 <img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_03.png" alt="Deskripsi Gambar" width="300" height="380">
+3. Create Post for MSME
 <img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_10.png" alt="Deskripsi Gambar" width="300" height="380">
+4. Post Feeds from MSME
+this post contains MSME problem ask for help
 <img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_09.png" alt="Deskripsi Gambar" width="300" height="400">
+5. Preview MSME's Post
 <img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_11.png" alt="Deskripsi Gambar" width="300" height="400">
+6. Student can give a comment to offer solutions
 <img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_13.png" alt="Deskripsi Gambar" width="300" height="400">
+7. MSME's collab with student
+click collab text button on student's comment. Post's tag will change to "on progress task"
 <img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_12.png" alt="Deskripsi Gambar" width="300" height="400">
+8. Check MSME's Profile Activity
+Shows MSME's activity for instance information MSME's collab with
 <img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_07.png" alt="Deskripsi Gambar" width="300" height="400">
+9. Chat Room
+Only fellow collaborator could sent a message
 <img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_08.png" alt="Deskripsi Gambar" width="300" height="400">
+10. User Profile Identity
 <img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_04.png" alt="Deskripsi Gambar" width="300" height="400">
+11. User's post
 <img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_05.png" alt="Deskripsi Gambar" width="300" height="400">
+12. User's Preview Post
+if post currently on going, post's tag will shows "on progress task"
 <img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_06.png" alt="Deskripsi Gambar" width="300" height="400">
 
 
