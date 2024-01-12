@@ -29,6 +29,7 @@ func AllComments(c *gin.Context) {
 		jsonData := map[string]interface{}{
 			"id_comment": comments[i].ID,
 			"team": map[string]interface{}{
+				"team_id":   team.ID,
 				"team_name": team.TeamName,
 			},
 			"comment":         comments[i].Comment,
