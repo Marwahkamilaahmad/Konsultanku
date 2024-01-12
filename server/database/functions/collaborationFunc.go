@@ -8,8 +8,9 @@ import (
 )
 
 func SendOffer(idMse, idTeam uuid.UUID) (models.Collaboration, error) {
-
+	collaborationID := uuid.New()
 	collaboration := models.Collaboration{
+		ID:     collaborationID,
 		MseID:  idMse,
 		TeamID: idTeam,
 	}
