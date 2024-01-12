@@ -1,6 +1,7 @@
 # konsultanku
-Team : DZIRION
-Member : 
+-Team : DZIRION
+
+-Member : 
 1. Nikita Dinda Azizah (Hustler)
 2. Yashinta ( Hipster )
 3. Dzaki Maulana A ( Hacker )
@@ -27,6 +28,5 @@ Member :
    - Flutter will hit (http://localhost:8080/api/v1/team/decision) with the PUT method to update the row if they accept the offer.
    - If collaboration happens, the server will allow some rules.
 
-
-
+## Screenshots App
 
