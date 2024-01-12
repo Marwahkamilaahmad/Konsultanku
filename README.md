@@ -1,17 +1,18 @@
 # konsultanku
--Team : DZIRION
+**Team :** DZIRION
 
--Member : 
+**Member :**
 1. Nikita Dinda Azizah (Hustler)
 2. Yashinta Asa Imama ( Hipster )
 3. Dzaki Maulana A ( Hacker )
 4. Marwah Kamila Ahmad ( Hacker )
 
 ## REST API Documentation
-[API Documentation](https://documenter.getpostman.com/view/30161030/2s9YsMBC4g)
+- [Backend](https://github.com/Marwahkamilaahmad/Konsultanku/tree/main/server)
+- [API Documentation](https://documenter.getpostman.com/view/30161030/2s9YsMBC4g)
 
 ## How Our MVP Works?
-"To run this application, we use MySQL in our MVP. In my development, I use Xampp to run MySQL and edit in it phpMyAdmin"
+> "To run this application, we use MySQL in our MVP. In my development, I use Xampp to run MySQL and edit it in phpMyAdmin"
 1. **MSE See All Solution from Student**
    - Flutter gets all data comments from (http://localhost:8080/api/v1/mse/comments).
    - Server sends data in JSON form to Flutter.
