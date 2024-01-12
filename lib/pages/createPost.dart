@@ -40,11 +40,12 @@ class _CreatePostState extends State<CreatePost> {
                       leading: IconButton(
                         onPressed: () {},
                         icon: CircleAvatar(
-                          // backgroundImage: AssetImage('assets/user_profile_image.png'),
-                          backgroundColor: Colors.purple[200],
+                          backgroundImage: NetworkImage("https://i.mydramalist.com/jV1Awf.jpg"),
+                          // backgroundColor: Colors.purple[200],
+
                         ),
                       ),
-                      title: Text("username"),
+                      title: Text("Aldini Mukti"),
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
