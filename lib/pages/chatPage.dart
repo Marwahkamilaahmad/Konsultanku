@@ -4,8 +4,9 @@ class User {
   String name;
   String id;
   String email;
+  String imageUrl;
 
-  User({this.name = "", this.email = "", this.id = ""});
+  User({this.name = "", this.email = "", this.id = "", this.imageUrl = ""});
 }
 
 class ChatPage extends StatefulWidget {
@@ -14,8 +15,8 @@ class ChatPage extends StatefulWidget {
 
 class _ChatPageState extends State<ChatPage> {
   List<User> usersList = [
-    User(name: "sandy", email: "sandy@gmail.com", id: "124"),
-    User(name: "alya", email: "alya@gmail.com", id: "127")
+    User(name: "Kenshi Yamaguchi", email: "kenshi-why@gmail.com", id: "115642", imageUrl:  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD1oYHOkWvRtUd65uGKIQPyMl2aFwBaP0d6g&usqp=CAU"),
+    User(name: "alya kusumo", email: "alya-k@gmail.com", id: "622435", imageUrl: "https://images.soco.id/374-c7b20894fbc6b8fc71b49fd3541e67e7.jpg.jpeg")
   ];
   //  List<DocumentSnapshot> usersList;
 
@@ -43,7 +44,8 @@ class _ChatPageState extends State<ChatPage> {
               children: [
                 ListTile(
                   leading: CircleAvatar(
-                    backgroundColor: Color.fromARGB(255, 37, 37, 160),
+                    // backgroundColor: Color.fromARGB(255, 37, 37, 160),
+                    backgroundImage: NetworkImage(usersList[index].imageUrl),
                   ),
                   title: Text(usersList[index].name,
                       style: TextStyle(

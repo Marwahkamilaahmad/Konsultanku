@@ -32,7 +32,10 @@ class UserProfile extends StatelessWidget {
               shape: BoxShape.circle,
             ),
             child: CircleAvatar(
-              backgroundColor: Color.fromARGB(255, 208, 160, 160),
+              // backgroundColor: Color.fromARGB(255, 208, 160, 160),
+              backgroundImage: 
+              NetworkImage(
+                  "https://i.mydramalist.com/jV1Awf.jpg"),
             ),
           ),
         ),

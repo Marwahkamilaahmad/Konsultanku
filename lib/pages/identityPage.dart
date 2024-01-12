@@ -12,11 +12,11 @@ class _IdentityPageState extends State<IdentityPage> {
       child: Column(
         children: [
           Padding(
-            padding:  EdgeInsets.symmetric(vertical: 5, horizontal: 25),
+            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 25),
             child: Row(
               children: [
-                Text("Nama: "),
-                SizedBox(width: 8),
+                Text("Name:"),
+                SizedBox(width: 5),
                 Expanded(
                   child: SizedBox(
                     height: 40,
@@ -31,35 +31,7 @@ class _IdentityPageState extends State<IdentityPage> {
                         // Set other styles as needed
                       ),
                       controller: TextEditingController(
-                        text: "John Doe",
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding:  EdgeInsets.symmetric(vertical: 5, horizontal: 25),
-            child: Row(
-              children: [
-                Text("Nama: "),
-                SizedBox(width: 8),
-                Expanded(
-                  child: SizedBox(
-                    height: 40,
-                    child: TextField(
-                      textAlignVertical: TextAlignVertical.top,
-                      readOnly: true,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                      ),
-                      style: TextStyle(
-                        fontSize: 14.0,
-                        // Set other styles as needed
-                      ),
-                      controller: TextEditingController(
-                        text: "John Doe",
+                        text: "ALDINI MUKTI",
                       ),
                     ),
                   ),
@@ -71,8 +43,8 @@ class _IdentityPageState extends State<IdentityPage> {
             padding: EdgeInsets.symmetric(vertical: 5, horizontal: 25),
             child: Row(
               children: [
-                Text("Nama: "),
-                SizedBox(width: 8),
+                Text("ID: "),
+                SizedBox(width: 24),
                 Expanded(
                   child: SizedBox(
                     height: 40,
@@ -87,7 +59,7 @@ class _IdentityPageState extends State<IdentityPage> {
                         // Set other styles as needed
                       ),
                       controller: TextEditingController(
-                        text: "John Doe",
+                        text: "019982",
                       ),
                     ),
                   ),
@@ -99,7 +71,7 @@ class _IdentityPageState extends State<IdentityPage> {
             padding: EdgeInsets.symmetric(vertical: 5, horizontal: 25),
             child: Row(
               children: [
-                Text("Nama: "),
+                Text("Role: "),
                 SizedBox(width: 8),
                 Expanded(
                   child: SizedBox(
@@ -115,7 +87,7 @@ class _IdentityPageState extends State<IdentityPage> {
                         // Set other styles as needed
                       ),
                       controller: TextEditingController(
-                        text: "John Doe",
+                        text: "MSME",
                       ),
                     ),
                   ),
@@ -127,7 +99,7 @@ class _IdentityPageState extends State<IdentityPage> {
             padding: EdgeInsets.symmetric(vertical: 5, horizontal: 25),
             child: Row(
               children: [
-                Text("Nama: "),
+                Text("Since"),
                 SizedBox(width: 8),
                 Expanded(
                   child: SizedBox(
@@ -143,7 +115,7 @@ class _IdentityPageState extends State<IdentityPage> {
                         // Set other styles as needed
                       ),
                       controller: TextEditingController(
-                        text: "John Doe",
+                        text: "23 juni 2024",
                       ),
                     ),
                   ),

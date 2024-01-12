@@ -15,7 +15,7 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 17, 64, 204),
+      backgroundColor: Color.fromRGBO(101, 98, 253, 1),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Card(
@@ -38,12 +38,12 @@ class _SignUpPageState extends State<SignUpPage> {
                         'Register Konsultanku',
                         style: GoogleFonts.inter(
                           fontSize: 24.0,
-                          color: const Color(0xFF15224F),
+                          color: const Color.fromARGB(255, 98, 98, 98),
                           fontWeight: FontWeight.w600,
                         ),
                       ),
                       SizedBox(
-                        height: 10,
+                        height: 20,
                       ),
                       Form(
                         key: _formKey,
@@ -140,7 +140,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 style: ButtonStyle(
                                   elevation: MaterialStatePropertyAll(10),
                                   backgroundColor: MaterialStatePropertyAll(
-                                    Color.fromARGB(255, 41, 76, 193),
+                                    Color.fromRGBO(101, 98, 253, 1),
                                   ),
                                 ),
                                 onPressed: () {

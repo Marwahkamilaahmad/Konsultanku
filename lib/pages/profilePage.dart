@@ -36,12 +36,12 @@ class _ProfilePageState extends State<ProfilePage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    "Marwah Kamila Ahmad",
+                    "ALDINI MUKTI",
                     style: TextStyle(fontSize: 16),
                   ),
                   SizedBox(height: 4),
                   Text(
-                    "Student",
+                    "MSME",
                     style: TextStyle(fontSize: 12),
                   ),
                   SizedBox(height: 4),
@@ -57,7 +57,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         width: 5,
                       ),
                       Text(
-                        "City, America",
+                        "City, Jakarta",
                         style: TextStyle(fontSize: 12),
                       ),
                     ],

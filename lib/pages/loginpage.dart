@@ -17,7 +17,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 17, 64, 204),
+      backgroundColor: Color.fromRGBO(101, 98, 253, 1),
       body: SafeArea(
         child: Column(
           children: [
@@ -40,14 +40,22 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text(
-                        'Login Konsultanku',
-                        style: GoogleFonts.inter(
-                          fontSize: 24.0,
-                          color: const Color(0xFF15224F),
-                          fontWeight: FontWeight.w600,
+                      Container(
+                        height: 35,
+                        child: Image.asset(
+                          
+                          '/images/konsultanku-1.png',
+                          fit: BoxFit.fill,
                         ),
                       ),
+                      // Text(
+                      //   'Login Konsultanku',
+                      //   style: GoogleFonts.inter(
+                      //     fontSize: 24.0,
+                      //     color: const Color.fromARGB(255, 98, 98, 98),
+                      //     fontWeight: FontWeight.w600,
+                      //   ),
+                      // ),
                       SizedBox(
                         height: 10,
                       ),
@@ -94,7 +102,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           style: ButtonStyle(
                             elevation: MaterialStatePropertyAll(5),
                             backgroundColor: MaterialStatePropertyAll(
-                                Color.fromARGB(255, 41, 76, 193)),
+                              Color.fromRGBO(101, 98, 253, 1),
+                            ),
                           ),
                           onPressed: () {
                             Navigator.push(

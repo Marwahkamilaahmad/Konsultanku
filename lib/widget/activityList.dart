@@ -24,12 +24,12 @@ class _ActivityListState extends State<ActivityListWidget> {
       margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       child: ListTile(
         leading: CircleAvatar(
-          backgroundImage: AssetImage("assets/images/Rectangle-30.png"),
-          backgroundColor: Colors.pink,
+          backgroundColor: Colors.amber,
+          backgroundImage: NetworkImage("https://static.thenounproject.com/png/118540-200.png"),
         ),
         trailing: Text("1 hr ago"),
         title: Text("Colaboration"),
-        subtitle: Text("now you were colaborate with user id : 123223"),
+        subtitle: Text("now you were colaborate with user : Kenshi Yamaguchi"),
       ),
     );
   }
