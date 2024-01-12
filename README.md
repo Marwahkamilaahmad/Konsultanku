@@ -1,19 +1,10 @@
 # konsultanku
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Team : DZIRION
+Member : 
+1. Nikita Dinda Azizah (Hustler)
+2. Yashinta ( Hipster )
+3. Dzaki Maulana A ( Hacker )
+4. Marwah Kamila Ahmad ( Hacker )
 
 ## REST API Documentation
 [API Documentation](https://documenter.getpostman.com/view/30161030/2s9YsMBC4g)
