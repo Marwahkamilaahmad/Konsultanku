@@ -30,7 +30,7 @@
 
 ## Screenshots App
 
-<img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_04.png" alt="Deskripsi Gambar" width="300" height="500">
+<img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_04.png" alt="Deskripsi Gambar" width="300" height="450">
 
 
 
