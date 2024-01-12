@@ -31,9 +31,9 @@
 
 ## Screenshots App
 
-<img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_02.png" alt="Deskripsi Gambar" width="300" height="400">
-<img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_03.png" alt="Deskripsi Gambar" width="300" height="400">
-<img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_10.png" alt="Deskripsi Gambar" width="300" height="400">
+<img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_02.png" alt="Deskripsi Gambar" width="300" height="380">
+<img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_03.png" alt="Deskripsi Gambar" width="300" height="380">
+<img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_10.png" alt="Deskripsi Gambar" width="300" height="380">
 <img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_09.png" alt="Deskripsi Gambar" width="300" height="400">
 <img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_11.png" alt="Deskripsi Gambar" width="300" height="400">
 <img src="https://raw.githubusercontent.com/Marwahkamilaahmad/Konsultanku/main/screenshot/flutter_13.png" alt="Deskripsi Gambar" width="300" height="400">
