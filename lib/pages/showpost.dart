@@ -3,6 +3,7 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:konsultanku/pages/createPost.dart';
 import 'package:konsultanku/pages/feedspage.dart';
+import 'package:konsultanku/pages/showGroup.dart';
 import 'package:konsultanku/pages/viewfeeds.dart';
 
 class ShowPost extends StatefulWidget {
@@ -14,7 +15,8 @@ class _ShowPostState extends State<ShowPost> {
   final List<Post> posts = [
     Post(
       username: 'Aldini Mukti',
-      content: 'Halo semuanya, saya dari ALFAGA sedang mencari bantuan untuk membuat website produk kami. Saat ini, kami mengalami kendala karena kurangnya penguasaan teknologi. Kami percaya bahwa memiliki website dapat membantu memperluas jangkauan produk kami dan meningkatkan kehadiran online',
+      content:
+          'Halo semuanya, saya dari ALFAGA sedang mencari bantuan untuk membuat website produk kami. Saat ini, kami mengalami kendala karena kurangnya penguasaan teknologi. Kami percaya bahwa memiliki website dapat membantu memperluas jangkauan produk kami dan meningkatkan kehadiran online',
       imageUrl: "https://i.mydramalist.com/jV1Awf.jpg",
       tag: 'pemasaran',
       likeCount: 45,
@@ -22,8 +24,10 @@ class _ShowPostState extends State<ShowPost> {
     ),
     Post(
       username: 'Jia Chou',
-      content: 'Kami mencari saran, panduan, atau bantuan dari rekan-rekan UMKM yang memiliki pengalaman atau keahlian dalam Pemahaman dan penerapan teknologi dalam manajemen bisnis UMKM.Rekomendasi aplikasi atau platform yang dapat membantu dalam meningkatkan efisiensi operasional.Pelatihan atau sumber daya yang dapat membantu tim kami meningkatkan keterampilan teknologi',
-      imageUrl: "https://images.soco.id/374-c7b20894fbc6b8fc71b49fd3541e67e7.jpg.jpeg",
+      content:
+          'Kami mencari saran, panduan, atau bantuan dari rekan-rekan UMKM yang memiliki pengalaman atau keahlian dalam Pemahaman dan penerapan teknologi dalam manajemen bisnis UMKM.Rekomendasi aplikasi atau platform yang dapat membantu dalam meningkatkan efisiensi operasional.Pelatihan atau sumber daya yang dapat membantu tim kami meningkatkan keterampilan teknologi',
+      imageUrl:
+          "https://images.soco.id/374-c7b20894fbc6b8fc71b49fd3541e67e7.jpg.jpeg",
       tag: 'management',
       likeCount: 23,
     ),
@@ -90,6 +94,7 @@ class _ShowPostState extends State<ShowPost> {
                   SingleChildScrollView(
                     child: Column(
                       children: <Widget>[
+                        HorizontalGroupList(),
                         Padding(
                           padding: const EdgeInsets.all(2.0),
                           child: ListView.builder(
