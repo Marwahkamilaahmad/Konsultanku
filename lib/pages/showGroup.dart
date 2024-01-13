@@ -16,11 +16,41 @@ class _HorizontalGroupListState extends State<HorizontalGroupList> {
         scrollDirection: Axis.horizontal,
         itemCount: groupNames.length,
         itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: GroupBox(
-              groupName: groupNames[index],
-              iconData: Icons.group,
+          return GestureDetector(
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Text('Kolaborasi'),
+                    content:
+                        Text('Apakah Anda ingin berkolaborasi dengan user?'),
+                    actions: <Widget>[
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop(false); // Tutup dialog
+                        },
+                        child: Text('No'),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          // Lakukan aksi jika user memilih "Yes"
+                          Navigator.of(context).pop(true);
+                          setState(() {});
+                        },
+                        child: Text('Yes'),
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal:4),
+              child: GroupBox(
+                groupName: groupNames[index],
+                iconData: Icons.group,
+              ),
             ),
           );
         },
@@ -40,6 +70,7 @@ class GroupBox extends StatelessWidget {
     return Container(
       width: 120.0, // Set the width as needed
       decoration: BoxDecoration(
+        color: Colors.white,
         border: Border.all(color: Colors.blue),
         borderRadius: BorderRadius.circular(10.0),
       ),
@@ -61,4 +92,3 @@ class GroupBox extends StatelessWidget {
     );
   }
 }
-

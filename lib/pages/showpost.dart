@@ -94,7 +94,14 @@ class _ShowPostState extends State<ShowPost> {
                   SingleChildScrollView(
                     child: Column(
                       children: <Widget>[
-                        HorizontalGroupList(),
+                        SizedBox(
+                          height: 6,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 6),
+                          child: HorizontalGroupList(),
+                        ),
                         Padding(
                           padding: const EdgeInsets.all(2.0),
                           child: ListView.builder(

@@ -23,11 +23,11 @@ class _FeedsWidgetState extends State<FeedsWidget> {
             BorderRadius.circular(10.0), // Adjust the radius as needed
         side: BorderSide(
           color:
-              Color.fromARGB(255, 203, 203, 203), // Set the color of the border
+              Colors.transparent, // Set the color of the border
           width: 1.0, // Set the width of the border
         ),
       ),
-      shadowColor: Colors.grey,
+      shadowColor: Colors.blue,
       color: Colors.white,
       margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       child: Column(
