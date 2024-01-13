@@ -40,6 +40,20 @@ class _ProfilePageState extends State<ProfilePage> {
                     style: TextStyle(fontSize: 16),
                   ),
                   SizedBox(height: 4),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.star,
+                        color: Colors.yellow[600],
+                        size: 18,
+                      ),
+                      Icon(Icons.star, color: Colors.yellow[600], size: 18),
+                      Icon(Icons.star, color: Colors.yellow[600], size: 18),
+                      Icon(Icons.star, color: Colors.yellow[600], size: 18),
+                      Icon(Icons.star, color: Colors.yellow[600], size: 18),
+                    ],
+                  ),
                   Text(
                     "MSME",
                     style: TextStyle(fontSize: 12),
@@ -61,16 +75,29 @@ class _ProfilePageState extends State<ProfilePage> {
                         style: TextStyle(fontSize: 12),
                       ),
                     ],
+                  ),
+                  SizedBox(height: 4),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "4",
+                        style: TextStyle(fontSize: 24, color: Colors.amber),
+                      ),
+                      Text("Solved"),
+                    ],
                   )
                 ],
               ),
             ),
-            UserEvents( selectedTab: click, onTab: (index, clicked) {
-              setState(() {
-                selected = index;
-                click = clicked;
-              });
-            }),
+            UserEvents(
+                selectedTab: click,
+                onTab: (index, clicked) {
+                  setState(() {
+                    selected = index;
+                    click = clicked;
+                  });
+                }),
             Expanded(
               child: SingleChildScrollView(
                 child: userPages[selected],
@@ -91,7 +118,8 @@ class UserEvents extends StatelessWidget {
     return tabIndex == selectedTab ? Colors.blue : Colors.black;
   }
 
-  const UserEvents({Key? key, required this.onTab, required this.selectedTab}) : super(key: key);
+  const UserEvents({Key? key, required this.onTab, required this.selectedTab})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

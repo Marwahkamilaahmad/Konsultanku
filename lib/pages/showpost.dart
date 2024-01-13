@@ -137,6 +137,7 @@ class _ShowPostState extends State<ShowPost> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Color.fromARGB(255, 231, 225, 255) ,
         onPressed: () {
           Navigator.push(
             context,
