@@ -62,8 +62,3 @@ class GroupBox extends StatelessWidget {
   }
 }
 
-void main() {
-  runApp(MaterialApp(
-    home: HorizontalGroupList(),
-  ));
-}
