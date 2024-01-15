@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:konsultanku/main.dart';
 import 'package:konsultanku/pages/loginpage.dart';
+import 'package:http/http.dart' as http;
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -11,6 +12,28 @@ class SignUpPage extends StatefulWidget {
 class _SignUpPageState extends State<SignUpPage> {
   final _formKey = GlobalKey<FormState>();
   String? _role = "", _email = "", _username = "", _password = "";
+
+  void RegisterUser() async {
+    Map<String, dynamic> registrationData = {
+      "role": _role,
+      "email": _email,
+      "username": _username,
+      "password": _password,
+    };
+
+    var response = await http.post(
+        Uri.parse("http://localhost:8080/api/v1/auth/register"),
+        body: registrationData);
+
+    if (response.statusCode == 200) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => MyHomePage()),
+      );
+    } else {
+      print("Registration failed. Status code: ${response.statusCode}");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -144,14 +167,14 @@ class _SignUpPageState extends State<SignUpPage> {
                                   ),
                                 ),
                                 onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => MyHomePage()),
-                                  );
+                                  // Navigator.push(
+                                  //   context,
+                                  //   MaterialPageRoute(
+                                  //       builder: (context) => MyHomePage()),
+                                  // );
                                   if (_formKey.currentState!.validate()) {
+                                    RegisterUser();
                                     _formKey.currentState!.save();
-                                    // TODO: Perform sign up action
                                   }
                                 },
                                 child: Text(
