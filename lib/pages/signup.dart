@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:konsultanku/main.dart';
 import 'package:konsultanku/pages/loginpage.dart';
 import 'package:http/http.dart' as http;
+import 'package:konsultanku/pages/signup2.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -10,14 +11,20 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  bool clickedMSME = false;
+  bool clickedStud = false;
   final _formKey = GlobalKey<FormState>();
-  String? _role = "", _email = "", _username = "", _password = "";
+  String? _role = "",
+      _email = "",
+      _username = "",
+      _password = "",
+      _phone_number = "";
 
   void RegisterUser() async {
     Map<String, dynamic> registrationData = {
-      "role": _role,
       "email": _email,
-      "username": _username,
+      "name": _username,
+      "phone_number": _phone_number,
       "password": _password,
     };
 
@@ -72,24 +79,58 @@ class _SignUpPageState extends State<SignUpPage> {
                         key: _formKey,
                         child: Column(
                           children: <Widget>[
-                            Container(
-                              alignment: Alignment.center,
-                              height: 45,
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 10),
-                              child: TextFormField(
-                                decoration: InputDecoration(
-                                    labelText: 'Sign Up As',
-                                    border: OutlineInputBorder()),
-                                validator: (value) {
-                                  if (value == "") {
-                                    return 'enter your role';
-                                  }
-                                  return null;
-                                },
-                                onSaved: (value) {
-                                  _role = value;
-                                },
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 10),
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: MaterialButton(
+                                        padding: const EdgeInsets.all(8.0),
+                                        onPressed: () {
+                                          !clickedStud
+                                              ? setState(() {
+                                                  clickedMSME = !clickedMSME;
+                                                })
+                                              : false;
+                                        },
+                                        child: Text("I'm a msme"),
+                                        shape: OutlineInputBorder(
+                                          borderSide: clickedMSME
+                                              ? BorderSide(
+                                                  color: Colors.blue.shade900,
+                                                  width: 2)
+                                              : BorderSide(color: Colors.grey),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: MaterialButton(
+                                        onPressed: () {
+                                          !clickedMSME
+                                              ? setState(() {
+                                                  clickedStud = !clickedStud;
+                                                })
+                                              : false;
+                                        },
+                                        child: Text("I'm a student"),
+                                        shape: OutlineInputBorder(
+                                          borderSide: clickedStud &&
+                                                  !clickedMSME
+                                              ? BorderSide(
+                                                  color: Colors.blue.shade900,
+                                                  width: 2)
+                                              : BorderSide(color: Colors.grey),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                             SizedBox(height: 16),
@@ -142,6 +183,27 @@ class _SignUpPageState extends State<SignUpPage> {
                                   const EdgeInsets.symmetric(horizontal: 10),
                               child: TextFormField(
                                 decoration: InputDecoration(
+                                    labelText: 'Phone Number',
+                                    border: OutlineInputBorder()),
+                                validator: (value) {
+                                  if (value == "") {
+                                    return 'Please enter your phone';
+                                  }
+                                  return null;
+                                },
+                                onSaved: (value) {
+                                  _phone_number = value;
+                                },
+                              ),
+                            ),
+                            SizedBox(height: 16),
+                            Container(
+                              alignment: Alignment.center,
+                              height: 45,
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: TextFormField(
+                                decoration: InputDecoration(
                                     labelText: 'Password',
                                     border: OutlineInputBorder()),
                                 validator: (value) {
@@ -167,18 +229,32 @@ class _SignUpPageState extends State<SignUpPage> {
                                   ),
                                 ),
                                 onPressed: () {
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(
-                                  //       builder: (context) => MyHomePage()),
-                                  // );
                                   if (_formKey.currentState!.validate()) {
-                                    RegisterUser();
-                                    _formKey.currentState!.save();
+                                    if (clickedMSME = true) {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                SignUpPage2("msme")),
+                                      );
+
+                                      if (clickedStud = true) {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  SignUpPage2("student")),
+                                        );
+                                      }
+                                    }
                                   }
+
+                                  //   RegisterUser();
+                                  //   _formKey.currentState!.save();
+                                  // }
                                 },
                                 child: Text(
-                                  'Sign Up',
+                                  'Continue',
                                   style: TextStyle(color: Colors.white),
                                 ),
                               ),
