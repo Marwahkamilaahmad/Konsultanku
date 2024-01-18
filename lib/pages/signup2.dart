@@ -22,7 +22,8 @@ class _SignUpPageState2 extends State<SignUpPage2> {
       _student_name = "",
       _tag_name = "",
       _date_of_birth = "",
-      _major_university = "",
+      _major = "",
+      _university = "",
       _class_of = "";
 
   void RegisterUser() async {
@@ -36,7 +37,8 @@ class _SignUpPageState2 extends State<SignUpPage2> {
       "student_name": _student_name,
       "tag_name": _tag_name,
       "date_of_birth": _date_of_birth,
-      "major_university": _major_university,
+      "major" : _major,
+      "university": _university,
       "class_of": _class_of,
     };
 
@@ -251,16 +253,16 @@ class _SignUpPageState2 extends State<SignUpPage2> {
                                     const EdgeInsets.symmetric(horizontal: 10),
                                 child: TextFormField(
                                   decoration: InputDecoration(
-                                      labelText: 'student name',
+                                      labelText: 'tag name',
                                       border: OutlineInputBorder()),
                                   validator: (value) {
                                     if (value == "") {
-                                      return 'enter your mse name';
+                                      return 'enter your tag name';
                                     }
                                     return null;
                                   },
                                   onSaved: (value) {
-                                    _mse_name = value;
+                                    _tag_name = value;
                                   },
                                 ),
                               ),
@@ -272,16 +274,16 @@ class _SignUpPageState2 extends State<SignUpPage2> {
                                     const EdgeInsets.symmetric(horizontal: 10),
                                 child: TextFormField(
                                   decoration: InputDecoration(
-                                      labelText: 'student type',
+                                      labelText: 'date of birth',
                                       border: OutlineInputBorder()),
                                   validator: (value) {
                                     if (value == "") {
-                                      return 'enter your mse type';
+                                      return 'enter your birth';
                                     }
                                     return null;
                                   },
                                   onSaved: (value) {
-                                    _mse_type = value;
+                                   _date_of_birth  = value;
                                   },
                                 ),
                               ),
@@ -293,7 +295,49 @@ class _SignUpPageState2 extends State<SignUpPage2> {
                                     const EdgeInsets.symmetric(horizontal: 10),
                                 child: TextFormField(
                                   decoration: InputDecoration(
-                                      labelText: 'since',
+                                      labelText: 'major',
+                                      border: OutlineInputBorder()),
+                                  validator: (value) {
+                                    if (value == "") {
+                                      return 'enter your major type';
+                                    }
+                                    return null;
+                                  },
+                                  onSaved: (value) {
+                                    _major = value;
+                                  },
+                                ),
+                              ),
+                              SizedBox(height: 16),
+                              Container(
+                                alignment: Alignment.center,
+                                height: 45,
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 10),
+                                child: TextFormField(
+                                  decoration: InputDecoration(
+                                      labelText: 'university',
+                                      border: OutlineInputBorder()),
+                                  validator: (value) {
+                                    if (value == "") {
+                                      return 'enter your university';
+                                    }
+                                    return null;
+                                  },
+                                  onSaved: (value) {
+                                    _university = value;
+                                  },
+                                ),
+                              ),
+                              SizedBox(height: 16),
+                              Container(
+                                alignment: Alignment.center,
+                                height: 45,
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 10),
+                                child: TextFormField(
+                                  decoration: InputDecoration(
+                                      labelText: 'class of',
                                       border: OutlineInputBorder()),
                                   validator: (value) {
                                     if (value == "") {
@@ -302,7 +346,7 @@ class _SignUpPageState2 extends State<SignUpPage2> {
                                     return null;
                                   },
                                   onSaved: (value) {
-                                    _mse_since = value;
+                                    _class_of = value;
                                   },
                                 ),
                               ),
