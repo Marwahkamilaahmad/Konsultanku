@@ -16,7 +16,7 @@ class _ShowPostState extends State<ShowPost> {
     Post(
       username: 'Aldini Mukti',
       content:
-          'Halo semuanya, saya dari ALFAGA sedang mencari bantuan untuk membuat website produk kami. Saat ini, kami mengalami kendala karena kurangnya penguasaan teknologi. Kami percaya bahwa memiliki website dapat membantu memperluas jangkauan produk kami dan meningkatkan kehadiran online',
+          "Sejak usaha berdiri saya memperoleh penjualan yang tergolong masih rendah dibandingkan kompetitor saya. Penjualan yang rendah ini disebabkan karena rendahnya kemampuan pemasaran yang usaha kami miliki dan lemahnya pengelolaan media sosial. Selain itu, kesulitan lain adalah di bidang produksi dimana saya kesulitan memperoleh bahan baku yang konsisten dengan yang saya beli sebelumnya. Hal ini menjadi tantangan karena baik pelanggan lama maupun pelanggan baru cenderung mencari produk yang sudah terjual di masa lalu karena suka dengan model dan material yang dibuat (pelanggan lama biasanya mendapatkan rekomendasi dengan word of mouth strategy). Masalahnya adalah saya kesulitan untuk menemukan material dan bahan baku yang sudah habis ke supplier",
       imageUrl: "https://i.mydramalist.com/jV1Awf.jpg",
       tag: 'pemasaran',
       likeCount: 45,
@@ -25,7 +25,9 @@ class _ShowPostState extends State<ShowPost> {
     Post(
       username: 'Jia Chou',
       content:
-          'Kami mencari saran, panduan, atau bantuan dari rekan-rekan UMKM yang memiliki pengalaman atau keahlian dalam Pemahaman dan penerapan teknologi dalam manajemen bisnis UMKM.Rekomendasi aplikasi atau platform yang dapat membantu dalam meningkatkan efisiensi operasional.Pelatihan atau sumber daya yang dapat membantu tim kami meningkatkan keterampilan teknologi',
+          "Dalam 2 tahun terakhir, penjualan saya (penjual soto ayam) terus mengalami peningkatan. Meskipun saya hanya bermodalkan gerobak, mayoritas pelanggan menyebutkan bahwa mereka menyukai soto yang saya jual karena terasa seperti masakan rumahan. Beberapa hari terakhir, anak saya mendorong saya untuk membuka outlet baru. Namun, ada beberapa keterbatasan yang menjadi concern saya:\n"
+          "1. Bagaimana control quality nya agar menghasilkan soto ayam dan layanan yang konsisten?\n"
+          "2. Apakah saya perlu menyewa ruko dan memperkuat branding bisnis ini dengan kehigienisannya atau tetap mempertahankan penggunaan gerobak dan pelanggan makan dengan duduk lesehan saja? Bagaimana cost benefit analysis nya dan mana yang paling profitable? Menaikkan harga karena ada penambahan biaya tetapi ada peningkatan citra brand atau tetap dengan model lama saja?",
       imageUrl:
           "https://images.soco.id/374-c7b20894fbc6b8fc71b49fd3541e67e7.jpg.jpeg",
       tag: 'management',
@@ -33,15 +35,18 @@ class _ShowPostState extends State<ShowPost> {
     ),
     Post(
       username: 'User4',
-      content: 'Post content 2',
+      content:
+          "Saat ini, di industri teksil, pasar ini sangat terfragmentasi dan highly competitive (dampak: harga sangat murah dan pelaku umkm tidak bisa mengikuti penurunan harga karena apabila harga diturunkan, mereka tidak memperoleh profit atau mungkin dapat dengan jumlah yang tidak menguntungkan). Contoh pertanyaan case:\n"
+          "1. Apakah melayani industri ini masih menguntungkan atau tidak? Apabila iya, apa langkah yang seharusnya diambil? Apakah melayani pada segmen khusus dan terdiferensiasi (market focus strategy) akan efektif?\n"
+          "2. Bagaimana strategi untuk menurunkan cost agar dapat menyesuaikan penurunan harga yang ada di pasar?",
       imageUrl: 'assets/images/image2.jpg',
-      tag: 'pemasaran',
+      tag: 'keuangan',
     ),
     Post(
       username: 'User5',
-      content: 'Post content 2',
+      content: "saya ingin bisa menjalankan usaha dengan laporan keuangan yang baik dan tertata rapi sehingga lebih mudah dari segi managemnet dan lebih terang",
       imageUrl: 'assets/images/image2.jpg',
-      tag: 'branding',
+      tag: 'keuangan',
     ),
     Post(
       username: 'User6',
@@ -97,11 +102,16 @@ class _ShowPostState extends State<ShowPost> {
                         SizedBox(
                           height: 6,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 16, vertical: 6),
-                          child: HorizontalGroupList(),
-                        ),
+
+                        // student ------------------------------------------------------
+                        
+                        // Padding(
+                        //   padding: const EdgeInsets.symmetric(
+                        //       horizontal: 16, vertical: 6),
+                        //   child: HorizontalGroupList(),
+                        // ),
+
+
                         Padding(
                           padding: const EdgeInsets.all(2.0),
                           child: ListView.builder(
@@ -137,7 +147,7 @@ class _ShowPostState extends State<ShowPost> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Color.fromARGB(255, 231, 225, 255) ,
+        backgroundColor: Color.fromARGB(255, 231, 225, 255),
         onPressed: () {
           Navigator.push(
             context,

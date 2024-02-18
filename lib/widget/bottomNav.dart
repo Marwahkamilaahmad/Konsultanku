@@ -56,7 +56,7 @@ class BottomNavBarWidget extends StatelessWidget {
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(FontAwesomeIcons.comments),
-          label: 'Chat',
+          label: 'Progress',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.home_filled),

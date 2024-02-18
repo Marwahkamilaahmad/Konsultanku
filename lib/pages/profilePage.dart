@@ -76,17 +76,20 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 4),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "4",
-                        style: TextStyle(fontSize: 24, color: Colors.amber),
-                      ),
-                      Text("Solved"),
-                    ],
-                  )
+
+                  // ------------------------------------------------------------------
+                  // if(student)
+                  // SizedBox(height: 4),
+                  // Column(
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: [
+                  //     Text(
+                  //       "4",
+                  //       style: TextStyle(fontSize: 24, color: Colors.amber),
+                  //     ),
+                  //     Text("Solved"),
+                  //   ],
+                  // )
                 ],
               ),
             ),
@@ -139,20 +142,29 @@ class UserEvents extends StatelessWidget {
             ),
           ),
         ),
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: OutlinedButton(
-              style: OutlinedButton.styleFrom(
-                shape: LinearBorder.bottom(
-                    side: BorderSide(
-                        color: getBorderColor(1))), // Warna garis bawah
-              ),
-              onPressed: () => {onTab(1, 1)},
-              child: Text("Post"),
-            ),
-          ),
-        ),
+
+// MSMEE
+
+        // Expanded(
+        //   child: Padding(
+        //     padding: const EdgeInsets.all(8.0),
+        //     child: OutlinedButton(
+        //       style: OutlinedButton.styleFrom(
+        //         shape: LinearBorder.bottom(
+        //             side: BorderSide(
+        //                 color: getBorderColor(1))), // Warna garis bawah
+        //       ),
+        //       onPressed: () => {onTab(1, 1)},
+        //       child: Text("Post"),
+        //     ),
+        //   ),
+        // ),
+
+
+
+
+
+
         Expanded(
           child: Padding(
             padding: const EdgeInsets.all(8.0),

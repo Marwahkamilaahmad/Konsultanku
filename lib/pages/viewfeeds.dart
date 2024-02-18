@@ -36,7 +36,7 @@ class _FeedsWidgetState extends State<FeedsWidget> {
           SizedBox(
             height: 10,
           ),
-          if (widget.post.tag == 'branding' && widget.post.solved != true)
+          if (widget.post.tag == 'keuangan' && widget.post.solved != true)
             ListTile(
               leading: IconButton(
                 onPressed: () {

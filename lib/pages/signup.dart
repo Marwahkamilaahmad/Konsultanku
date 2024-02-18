@@ -230,15 +230,15 @@ class _SignUpPageState extends State<SignUpPage> {
                                 ),
                                 onPressed: () {
                                   if (_formKey.currentState!.validate()) {
-                                    if (clickedMSME = true) {
+                                    if (clickedMSME) {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
                                                 SignUpPage2("msme")),
                                       );
-
-                                      if (clickedStud = true) {
+                                    }
+                                    if (clickedStud) {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -246,7 +246,6 @@ class _SignUpPageState extends State<SignUpPage> {
                                                   SignUpPage2("student")),
                                         );
                                       }
-                                    }
                                   }
 
                                   //   RegisterUser();

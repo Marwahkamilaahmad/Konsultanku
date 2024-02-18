@@ -35,11 +35,13 @@ class CommentPost {
   final String username;
   final String comment;
   final String imageUrl;
+  final String whatsapp;
   bool solved;
 
   CommentPost({
     required this.username,
     required this.comment,
+    required this.whatsapp,
     this.solved = false,
     this.imageUrl = "",
   });
@@ -49,7 +51,9 @@ final List<CommentPost> comments = [
   CommentPost(
       username: "Kenshi Yamaguchi",
       comment: "Saya tertarik dengan permasalahan yang di tawarkan oleh anda",
-      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD1oYHOkWvRtUd65uGKIQPyMl2aFwBaP0d6g&usqp=CAU",
+      imageUrl:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD1oYHOkWvRtUd65uGKIQPyMl2aFwBaP0d6g&usqp=CAU",
+      whatsapp: "62895406803388",
       solved: false),
   CommentPost(
       username: "Minzi Yonezu",
@@ -57,6 +61,7 @@ final List<CommentPost> comments = [
           "Saya ingin membantu permasalahan anda. boleh kolaborasi bersama ?",
       imageUrl:
           "https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/2023/01/09/1577281958.jpg",
+      whatsapp: "6289687108506",
       solved: false),
 ];
 
@@ -107,14 +112,14 @@ class _PostWidgetState extends State<PostWidget> {
                       ),
                     ),
                     color: Colors.white,
-                    margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                    margin: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(
                           height: 10,
                         ),
-                        if (widget.post.tag == 'branding' &&
+                        if (widget.post.tag == 'keuangan' &&
                             widget.post.solved != true)
                           ListTile(
                             leading: IconButton(
@@ -351,6 +356,12 @@ class _PostWidgetState extends State<PostWidget> {
                         SizedBox(
                           height: 16,
                         ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          child: Text("komentar"),
+                        ),
+                        SizedBox(
+                          height: 8,),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 1.0),
                           child: ListView.builder(

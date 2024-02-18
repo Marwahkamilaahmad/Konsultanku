@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:konsultanku/pages/feedspage.dart';
 import 'package:konsultanku/pages/loginpage.dart';
+import 'package:konsultanku/pages/progressPage.dart';
 import 'package:konsultanku/widget/bottomNav.dart';
 import 'package:konsultanku/pages/chatPage.dart';
 import 'package:konsultanku/pages/profilePage.dart';
@@ -38,7 +39,7 @@ class _NavigateAppState extends State<NavigateApp> {
   int _currentIndex = 0; // Move _currentIndex here
 
   final List<Widget> viewContainer = [
-    ChatPage(),
+    ProgressPage(),
     ShowPost(),
     ProfilePage(),
   ];
