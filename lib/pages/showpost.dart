@@ -104,12 +104,12 @@ class _ShowPostState extends State<ShowPost> {
                         ),
 
                         // student ------------------------------------------------------
-                        
-                        // Padding(
-                        //   padding: const EdgeInsets.symmetric(
-                        //       horizontal: 16, vertical: 6),
-                        //   child: HorizontalGroupList(),
-                        // ),
+
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 6),
+                          child: HorizontalGroupList(),
+                        ),
 
 
                         Padding(

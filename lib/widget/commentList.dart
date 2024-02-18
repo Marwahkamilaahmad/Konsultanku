@@ -1,6 +1,5 @@
-import 'dart:html';
+// import 'dart:html';
 import 'dart:js_interop_unsafe';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:konsultanku/pages/feedspage.dart';
 import 'dart:js' as js;

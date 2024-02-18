@@ -39,57 +39,57 @@ class _ProfilePageState extends State<ProfilePage> {
                     "ALDINI MUKTI",
                     style: TextStyle(fontSize: 16),
                   ),
-                  SizedBox(height: 4),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.star,
-                        color: Colors.yellow[600],
-                        size: 18,
-                      ),
-                      Icon(Icons.star, color: Colors.yellow[600], size: 18),
-                      Icon(Icons.star, color: Colors.yellow[600], size: 18),
-                      Icon(Icons.star, color: Colors.yellow[600], size: 18),
-                      Icon(Icons.star, color: Colors.yellow[600], size: 18),
-                    ],
-                  ),
+                  // SizedBox(height: 4),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: [
+                  //     Icon(
+                  //       Icons.star,
+                  //       color: Colors.yellow[600],
+                  //       size: 18,
+                  //     ),
+                  //     Icon(Icons.star, color: Colors.yellow[600], size: 18),
+                  //     Icon(Icons.star, color: Colors.yellow[600], size: 18),
+                  //     Icon(Icons.star, color: Colors.yellow[600], size: 18),
+                  //     Icon(Icons.star, color: Colors.yellow[600], size: 18),
+                  //   ],
+                  // ),
                   Text(
-                    "MSME",
+                    "student",
                     style: TextStyle(fontSize: 12),
                   ),
                   SizedBox(height: 4),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        FontAwesomeIcons.mapPin,
-                        size: 14,
-                        color: Colors.red,
-                      ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        "City, Jakarta",
-                        style: TextStyle(fontSize: 12),
-                      ),
+                      // Icon(
+                      //   FontAwesomeIcons.mapPin,
+                      //   size: 14,
+                      //   color: Colors.red,
+                      // ),
+                      // SizedBox(
+                      //   width: 5,
+                      // ),
+                      // Text(
+                      //   "City, Jakarta",
+                      //   style: TextStyle(fontSize: 12),
+                      // ),
                     ],
                   ),
 
                   // ------------------------------------------------------------------
                   // if(student)
-                  // SizedBox(height: 4),
-                  // Column(
-                  //   mainAxisAlignment: MainAxisAlignment.center,
-                  //   children: [
-                  //     Text(
-                  //       "4",
-                  //       style: TextStyle(fontSize: 24, color: Colors.amber),
-                  //     ),
-                  //     Text("Solved"),
-                  //   ],
-                  // )
+                  SizedBox(height: 4),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "4",
+                        style: TextStyle(fontSize: 24, color: Colors.amber),
+                      ),
+                      Text("Solved"),
+                    ],
+                  )
                 ],
               ),
             ),

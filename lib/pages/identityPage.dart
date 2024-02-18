@@ -115,79 +115,79 @@ class _IdentityPageState extends State<IdentityPage> {
           ),
          
           // UMKM ONLY
-          Padding(
-            padding: EdgeInsets.symmetric( horizontal: 25),
-            child: Text("Nama pemilik Usaha"),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 25),
-            child: SizedBox(
-              height: 40,
-              child: TextField(
-                textAlignVertical: TextAlignVertical.top,
-                readOnly: true,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                ),
-                style: TextStyle(
-                  fontSize: 14.0,
-                  // Set other styles as needed
-                ),
-                controller: TextEditingController(
-                  text: "Yati",
-                ),
-              ),
-            ),
-          ),
+          // Padding(
+          //   padding: EdgeInsets.symmetric( horizontal: 25),
+          //   child: Text("Nama pemilik Usaha"),
+          // ),
+          // Padding(
+          //   padding: EdgeInsets.symmetric(vertical: 5, horizontal: 25),
+          //   child: SizedBox(
+          //     height: 40,
+          //     child: TextField(
+          //       textAlignVertical: TextAlignVertical.top,
+          //       readOnly: true,
+          //       decoration: InputDecoration(
+          //         border: OutlineInputBorder(),
+          //       ),
+          //       style: TextStyle(
+          //         fontSize: 14.0,
+          //         // Set other styles as needed
+          //       ),
+          //       controller: TextEditingController(
+          //         text: "Yati",
+          //       ),
+          //     ),
+          //   ),
+          // ),
          
-          Padding(
-            padding: EdgeInsets.symmetric( horizontal: 25),
-            child: Text("Nama Usaha"),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 25),
-            child: SizedBox(
-              height: 40,
-              child: TextField(
-                textAlignVertical: TextAlignVertical.top,
-                readOnly: true,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                ),
-                style: TextStyle(
-                  fontSize: 14.0,
-                  // Set other styles as needed
-                ),
-                controller: TextEditingController(
-                  text: "Beeds Bracelets",
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric( horizontal: 25),
-            child: Text("Jenis Usaha"),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 25),
-            child: SizedBox(
-              height: 40,
-              child: TextField(
-                textAlignVertical: TextAlignVertical.top,
-                readOnly: true,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                ),
-                style: TextStyle(
-                  fontSize: 14.0,
-                  // Set other styles as needed
-                ),
-                controller: TextEditingController(
-                  text: "Accecories",
-                ),
-              ),
-            ),
-          ),
+          // Padding(
+          //   padding: EdgeInsets.symmetric( horizontal: 25),
+          //   child: Text("Nama Usaha"),
+          // ),
+          // Padding(
+          //   padding: EdgeInsets.symmetric(vertical: 5, horizontal: 25),
+          //   child: SizedBox(
+          //     height: 40,
+          //     child: TextField(
+          //       textAlignVertical: TextAlignVertical.top,
+          //       readOnly: true,
+          //       decoration: InputDecoration(
+          //         border: OutlineInputBorder(),
+          //       ),
+          //       style: TextStyle(
+          //         fontSize: 14.0,
+          //         // Set other styles as needed
+          //       ),
+          //       controller: TextEditingController(
+          //         text: "Beeds Bracelets",
+          //       ),
+          //     ),
+          //   ),
+          // ),
+          // Padding(
+          //   padding: EdgeInsets.symmetric( horizontal: 25),
+          //   child: Text("Jenis Usaha"),
+          // ),
+          // Padding(
+          //   padding: EdgeInsets.symmetric(vertical: 5, horizontal: 25),
+          //   child: SizedBox(
+          //     height: 40,
+          //     child: TextField(
+          //       textAlignVertical: TextAlignVertical.top,
+          //       readOnly: true,
+          //       decoration: InputDecoration(
+          //         border: OutlineInputBorder(),
+          //       ),
+          //       style: TextStyle(
+          //         fontSize: 14.0,
+          //         // Set other styles as needed
+          //       ),
+          //       controller: TextEditingController(
+          //         text: "Accecories",
+          //       ),
+          //     ),
+          //   ),
+          // ),
 
 
           // STUDENT

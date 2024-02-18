@@ -13,7 +13,6 @@ class SignUpPage2 extends StatefulWidget {
 }
 
 class _SignUpPageState2 extends State<SignUpPage2> {
-
   final _formKey = GlobalKey<FormState>();
   String? _owner_name = "",
       _mse_name = "",
@@ -37,7 +36,7 @@ class _SignUpPageState2 extends State<SignUpPage2> {
       "student_name": _student_name,
       "tag_name": _tag_name,
       "date_of_birth": _date_of_birth,
-      "major" : _major,
+      "major": _major,
       "university": _university,
       "class_of": _class_of,
     };
@@ -208,6 +207,11 @@ class _SignUpPageState2 extends State<SignUpPage2> {
                                     if (_formKey.currentState!.validate()) {
                                       RegisterUser();
                                       _formKey.currentState!.save();
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => MyHomePage()),
+                                      );
                                     }
                                   },
                                   child: Text(
@@ -283,7 +287,7 @@ class _SignUpPageState2 extends State<SignUpPage2> {
                                     return null;
                                   },
                                   onSaved: (value) {
-                                   _date_of_birth  = value;
+                                    _date_of_birth = value;
                                   },
                                 ),
                               ),
@@ -365,6 +369,11 @@ class _SignUpPageState2 extends State<SignUpPage2> {
                                       RegisterUser();
                                       _formKey.currentState!.save();
                                     }
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => MyHomePage()),
+                                    );
                                   },
                                   child: Text(
                                     'Sign Up',
