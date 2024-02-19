@@ -112,7 +112,7 @@ class _ProgressPageState extends State<ProgressPage> {
                                     height: 45,
                                     child: TextFormField(
                                       decoration: InputDecoration(
-                                          labelText: 'feedback msme',
+                                          labelText: 'student username',
                                           border: OutlineInputBorder()),
                                       validator: (value) {
                                         if (value == "") {
@@ -129,7 +129,24 @@ class _ProgressPageState extends State<ProgressPage> {
                                     height: 45,
                                     child: TextFormField(
                                       decoration: InputDecoration(
-                                          labelText: 'rating msme',
+                                          labelText: 'feedback student',
+                                          border: OutlineInputBorder()),
+                                      validator: (value) {
+                                        if (value == "") {
+                                          return 'enter your freedback';
+                                        }
+                                        return null;
+                                      },
+                                      onSaved: (value) {},
+                                    ),
+                                  ),
+                                  SizedBox(height: 16),
+                                  Container(
+                                    alignment: Alignment.center,
+                                    height: 45,
+                                    child: TextFormField(
+                                      decoration: InputDecoration(
+                                          labelText: 'rating student',
                                           border: OutlineInputBorder()),
                                       validator: (value) {
                                         if (value == "") {

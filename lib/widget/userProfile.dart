@@ -35,7 +35,7 @@ class UserProfile extends StatelessWidget {
               // backgroundColor: Color.fromARGB(255, 208, 160, 160),
               backgroundImage: 
               NetworkImage(
-                  "https://i.mydramalist.com/jV1Awf.jpg"),
+                  "https://o-cdn-cas.sirclocdn.com/parenting/images/1_Z9qDF91.width-800.format-webp.webp"),
             ),
           ),
         ),

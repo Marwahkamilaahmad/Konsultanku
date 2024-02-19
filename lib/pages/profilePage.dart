@@ -36,60 +36,63 @@ class _ProfilePageState extends State<ProfilePage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    "ALDINI MUKTI",
+                    "LARASATI DEWI",
                     style: TextStyle(fontSize: 16),
                   ),
-                  // SizedBox(height: 4),
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.center,
-                  //   children: [
-                  //     Icon(
-                  //       Icons.star,
-                  //       color: Colors.yellow[600],
-                  //       size: 18,
-                  //     ),
-                  //     Icon(Icons.star, color: Colors.yellow[600], size: 18),
-                  //     Icon(Icons.star, color: Colors.yellow[600], size: 18),
-                  //     Icon(Icons.star, color: Colors.yellow[600], size: 18),
-                  //     Icon(Icons.star, color: Colors.yellow[600], size: 18),
-                  //   ],
-                  // ),
+
+                  // for msme
+                  SizedBox(height: 4),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.star,
+                        color: Colors.yellow[600],
+                        size: 18,
+                      ),
+                      Icon(Icons.star, color: Colors.yellow[600], size: 18),
+                      Icon(Icons.star, color: Colors.yellow[600], size: 18),
+                      Icon(Icons.star, color: Colors.yellow[600], size: 18),
+                      Icon(Icons.star, color: Colors.yellow[600], size: 18),
+                    ],
+                  ),
+
                   Text(
-                    "student",
+                    "msme",
                     style: TextStyle(fontSize: 12),
                   ),
                   SizedBox(height: 4),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      // Icon(
-                      //   FontAwesomeIcons.mapPin,
-                      //   size: 14,
-                      //   color: Colors.red,
-                      // ),
-                      // SizedBox(
-                      //   width: 5,
-                      // ),
-                      // Text(
-                      //   "City, Jakarta",
-                      //   style: TextStyle(fontSize: 12),
-                      // ),
+                      Icon(
+                        FontAwesomeIcons.mapPin,
+                        size: 14,
+                        color: Colors.red,
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        "City, Jakarta",
+                        style: TextStyle(fontSize: 12),
+                      ),
                     ],
                   ),
 
                   // ------------------------------------------------------------------
                   // if(student)
                   SizedBox(height: 4),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "4",
-                        style: TextStyle(fontSize: 24, color: Colors.amber),
-                      ),
-                      Text("Solved"),
-                    ],
-                  )
+                  // Column(
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: [
+                  //     Text(
+                  //       "4",
+                  //       style: TextStyle(fontSize: 24, color: Colors.amber),
+                  //     ),
+                  //     Text("Solved"),
+                  //   ],
+                  // )
                 ],
               ),
             ),
@@ -143,22 +146,22 @@ class UserEvents extends StatelessWidget {
           ),
         ),
 
-// MSMEE
+// for MSME
 
-        // Expanded(
-        //   child: Padding(
-        //     padding: const EdgeInsets.all(8.0),
-        //     child: OutlinedButton(
-        //       style: OutlinedButton.styleFrom(
-        //         shape: LinearBorder.bottom(
-        //             side: BorderSide(
-        //                 color: getBorderColor(1))), // Warna garis bawah
-        //       ),
-        //       onPressed: () => {onTab(1, 1)},
-        //       child: Text("Post"),
-        //     ),
-        //   ),
-        // ),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: OutlinedButton(
+              style: OutlinedButton.styleFrom(
+                shape: LinearBorder.bottom(
+                    side: BorderSide(
+                        color: getBorderColor(1))), // Warna garis bawah
+              ),
+              onPressed: () => {onTab(1, 1)},
+              child: Text("Post"),
+            ),
+          ),
+        ),
 
 
 

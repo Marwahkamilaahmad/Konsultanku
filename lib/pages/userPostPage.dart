@@ -13,14 +13,14 @@ class _UserPostState extends State<UserPost> {
     Post(
       username: 'You',
       content: 'Halo semuanya, saya dari ALFAGA sedang mencari bantuan untuk membuat website produk kami. Saat ini, kami mengalami kendala karena kurangnya penguasaan teknologi. Kami percaya bahwa memiliki website dapat membantu memperluas jangkauan produk kami dan meningkatkan kehadiran online',
-      imageUrl: "https://i.mydramalist.com/jV1Awf.jpg",
+      imageUrl: "https://o-cdn-cas.sirclocdn.com/parenting/images/1_Z9qDF91.width-800.format-webp.webp",
       tag: 'branding',
       solved: true,
     ),
     Post(
       username: 'You',
       content: 'Kami mencari saran, panduan, atau bantuan dari rekan-rekan UMKM yang memiliki pengalaman atau keahlian dalam Pemahaman dan penerapan teknologi dalam manajemen bisnis UMKM.Rekomendasi aplikasi atau platform yang dapat membantu dalam meningkatkan efisiensi operasional.Pelatihan atau sumber daya yang dapat membantu tim kami meningkatkan keterampilan teknologi',
-      imageUrl: "https://i.mydramalist.com/jV1Awf.jpg",
+      imageUrl: "https://o-cdn-cas.sirclocdn.com/parenting/images/1_Z9qDF91.width-800.format-webp.webp",
       tag: 'management',
     ),];
 
