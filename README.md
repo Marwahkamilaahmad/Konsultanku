@@ -15,7 +15,7 @@
 5. GCP
    
 ## REST API Documentation
-- [Backend] (https://github.com/dzakimaulana/Konsultanku-Backend)
+- [Backend] ([https://github.com/dzakimaulana/Konsultanku-Backend](https://github.com/dzakimaulana/Konsultanku-GSC))
 - [API Documentation](https://documenter.getpostman.com/view/30161030/2s9YsMBC4g)
 
 ## How Our MVP Works?
